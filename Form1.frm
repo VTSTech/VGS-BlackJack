@@ -5,10 +5,10 @@ Begin VB.Form Form1
    ClientHeight    =   8400
    ClientLeft      =   225
    ClientTop       =   855
-   ClientWidth     =   5925
+   ClientWidth     =   5910
    LinkTopic       =   "Form1"
    ScaleHeight     =   8400
-   ScaleWidth      =   5925
+   ScaleWidth      =   5910
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton Command3 
       Caption         =   "New Game"
@@ -48,10 +48,18 @@ Begin VB.Form Form1
       Top             =   6240
       Width           =   5895
    End
+   Begin VB.Image Image65 
+      Height          =   1545
+      Left            =   6480
+      Picture         =   "Form1.frx":0016
+      Top             =   6240
+      Visible         =   0   'False
+      Width           =   1110
+   End
    Begin VB.Image Image64 
       Height          =   1485
       Left            =   4800
-      Picture         =   "Form1.frx":0016
+      Picture         =   "Form1.frx":0568
       Top             =   240
       Visible         =   0   'False
       Width           =   1080
@@ -59,7 +67,7 @@ Begin VB.Form Form1
    Begin VB.Image Image63 
       Height          =   1485
       Left            =   3720
-      Picture         =   "Form1.frx":065E
+      Picture         =   "Form1.frx":0BB0
       Top             =   240
       Visible         =   0   'False
       Width           =   1080
@@ -67,7 +75,7 @@ Begin VB.Form Form1
    Begin VB.Image Image62 
       Height          =   1485
       Left            =   2640
-      Picture         =   "Form1.frx":0CA6
+      Picture         =   "Form1.frx":11F8
       Top             =   240
       Visible         =   0   'False
       Width           =   1080
@@ -75,7 +83,7 @@ Begin VB.Form Form1
    Begin VB.Image Image61 
       Height          =   1485
       Left            =   4800
-      Picture         =   "Form1.frx":12EE
+      Picture         =   "Form1.frx":1840
       Top             =   3720
       Visible         =   0   'False
       Width           =   1080
@@ -83,7 +91,7 @@ Begin VB.Form Form1
    Begin VB.Image Image60 
       Height          =   1485
       Left            =   3720
-      Picture         =   "Form1.frx":1936
+      Picture         =   "Form1.frx":1E88
       Top             =   3720
       Visible         =   0   'False
       Width           =   1080
@@ -91,7 +99,7 @@ Begin VB.Form Form1
    Begin VB.Image Image59 
       Height          =   1485
       Left            =   2640
-      Picture         =   "Form1.frx":1F7E
+      Picture         =   "Form1.frx":24D0
       Top             =   3720
       Visible         =   0   'False
       Width           =   1080
@@ -118,42 +126,42 @@ Begin VB.Form Form1
    Begin VB.Image Image58 
       Height          =   1485
       Left            =   1320
-      Picture         =   "Form1.frx":25C6
+      Picture         =   "Form1.frx":2B18
       Top             =   3720
       Width           =   1080
    End
    Begin VB.Image Image57 
       Height          =   1485
       Left            =   1320
-      Picture         =   "Form1.frx":2C0E
+      Picture         =   "Form1.frx":3160
       Top             =   240
       Width           =   1080
    End
    Begin VB.Image Image56 
       Height          =   1485
       Left            =   240
-      Picture         =   "Form1.frx":3256
+      Picture         =   "Form1.frx":37A8
       Top             =   240
       Width           =   1080
    End
    Begin VB.Image Image55 
       Height          =   1485
       Left            =   240
-      Picture         =   "Form1.frx":389E
+      Picture         =   "Form1.frx":3DF0
       Top             =   3720
       Width           =   1080
    End
    Begin VB.Image Image54 
       Height          =   1485
       Left            =   480
-      Picture         =   "Form1.frx":3EE6
+      Picture         =   "Form1.frx":4438
       Top             =   1920
       Width           =   1080
    End
    Begin VB.Image Image53 
       Height          =   1485
       Left            =   6480
-      Picture         =   "Form1.frx":452E
+      Picture         =   "Form1.frx":4A80
       Top             =   4680
       Visible         =   0   'False
       Width           =   1080
@@ -161,7 +169,7 @@ Begin VB.Form Form1
    Begin VB.Image Image52 
       Height          =   1545
       Left            =   20520
-      Picture         =   "Form1.frx":4B76
+      Picture         =   "Form1.frx":50C8
       Top             =   0
       Visible         =   0   'False
       Width           =   1110
@@ -169,7 +177,7 @@ Begin VB.Form Form1
    Begin VB.Image Image51 
       Height          =   1560
       Left            =   19440
-      Picture         =   "Form1.frx":50B4
+      Picture         =   "Form1.frx":5606
       Top             =   0
       Visible         =   0   'False
       Width           =   1095
@@ -177,7 +185,7 @@ Begin VB.Form Form1
    Begin VB.Image Image50 
       Height          =   1545
       Left            =   18360
-      Picture         =   "Form1.frx":5993
+      Picture         =   "Form1.frx":5EE5
       Top             =   0
       Visible         =   0   'False
       Width           =   1095
@@ -185,7 +193,7 @@ Begin VB.Form Form1
    Begin VB.Image Image49 
       Height          =   1545
       Left            =   17280
-      Picture         =   "Form1.frx":62B3
+      Picture         =   "Form1.frx":6805
       Top             =   0
       Visible         =   0   'False
       Width           =   1125
@@ -193,7 +201,7 @@ Begin VB.Form Form1
    Begin VB.Image Image48 
       Height          =   1545
       Left            =   16200
-      Picture         =   "Form1.frx":6BDE
+      Picture         =   "Form1.frx":7130
       Top             =   0
       Visible         =   0   'False
       Width           =   1125
@@ -201,7 +209,7 @@ Begin VB.Form Form1
    Begin VB.Image Image47 
       Height          =   1545
       Left            =   15120
-      Picture         =   "Form1.frx":7236
+      Picture         =   "Form1.frx":7788
       Top             =   0
       Visible         =   0   'False
       Width           =   1125
@@ -209,7 +217,7 @@ Begin VB.Form Form1
    Begin VB.Image Image46 
       Height          =   1545
       Left            =   14040
-      Picture         =   "Form1.frx":7874
+      Picture         =   "Form1.frx":7DC6
       Top             =   0
       Visible         =   0   'False
       Width           =   1110
@@ -217,7 +225,7 @@ Begin VB.Form Form1
    Begin VB.Image Image45 
       Height          =   1545
       Left            =   12960
-      Picture         =   "Form1.frx":7E6D
+      Picture         =   "Form1.frx":83BF
       Top             =   0
       Visible         =   0   'False
       Width           =   1110
@@ -225,7 +233,7 @@ Begin VB.Form Form1
    Begin VB.Image Image44 
       Height          =   1545
       Left            =   11880
-      Picture         =   "Form1.frx":8430
+      Picture         =   "Form1.frx":8982
       Top             =   0
       Visible         =   0   'False
       Width           =   1080
@@ -233,7 +241,7 @@ Begin VB.Form Form1
    Begin VB.Image Image43 
       Height          =   1560
       Left            =   10680
-      Picture         =   "Form1.frx":89C9
+      Picture         =   "Form1.frx":8F1B
       Top             =   0
       Visible         =   0   'False
       Width           =   1125
@@ -241,7 +249,7 @@ Begin VB.Form Form1
    Begin VB.Image Image42 
       Height          =   1545
       Left            =   9600
-      Picture         =   "Form1.frx":8F84
+      Picture         =   "Form1.frx":94D6
       Top             =   0
       Visible         =   0   'False
       Width           =   1125
@@ -249,7 +257,7 @@ Begin VB.Form Form1
    Begin VB.Image Image41 
       Height          =   1545
       Left            =   8520
-      Picture         =   "Form1.frx":9519
+      Picture         =   "Form1.frx":9A6B
       Top             =   0
       Visible         =   0   'False
       Width           =   1095
@@ -257,7 +265,7 @@ Begin VB.Form Form1
    Begin VB.Image Image40 
       Height          =   1545
       Left            =   7440
-      Picture         =   "Form1.frx":9A63
+      Picture         =   "Form1.frx":9FB5
       Top             =   0
       Visible         =   0   'False
       Width           =   1110
@@ -265,7 +273,7 @@ Begin VB.Form Form1
    Begin VB.Image Image39 
       Height          =   1545
       Left            =   20520
-      Picture         =   "Form1.frx":9F99
+      Picture         =   "Form1.frx":A4EB
       Top             =   1560
       Visible         =   0   'False
       Width           =   1110
@@ -273,7 +281,7 @@ Begin VB.Form Form1
    Begin VB.Image Image38 
       Height          =   1560
       Left            =   19440
-      Picture         =   "Form1.frx":A4EB
+      Picture         =   "Form1.frx":AA3D
       Top             =   1560
       Visible         =   0   'False
       Width           =   1095
@@ -281,7 +289,7 @@ Begin VB.Form Form1
    Begin VB.Image Image37 
       Height          =   1560
       Left            =   18360
-      Picture         =   "Form1.frx":ADFD
+      Picture         =   "Form1.frx":B34F
       Top             =   1560
       Visible         =   0   'False
       Width           =   1095
@@ -289,7 +297,7 @@ Begin VB.Form Form1
    Begin VB.Image Image36 
       Height          =   1545
       Left            =   17280
-      Picture         =   "Form1.frx":B773
+      Picture         =   "Form1.frx":BCC5
       Top             =   1560
       Visible         =   0   'False
       Width           =   1125
@@ -297,7 +305,7 @@ Begin VB.Form Form1
    Begin VB.Image Image35 
       Height          =   1545
       Left            =   16200
-      Picture         =   "Form1.frx":C0BA
+      Picture         =   "Form1.frx":C60C
       Top             =   1560
       Visible         =   0   'False
       Width           =   1125
@@ -305,7 +313,7 @@ Begin VB.Form Form1
    Begin VB.Image Image34 
       Height          =   1545
       Left            =   15120
-      Picture         =   "Form1.frx":C6E5
+      Picture         =   "Form1.frx":CC37
       Top             =   1560
       Visible         =   0   'False
       Width           =   1125
@@ -313,7 +321,7 @@ Begin VB.Form Form1
    Begin VB.Image Image33 
       Height          =   1545
       Left            =   14040
-      Picture         =   "Form1.frx":CCD5
+      Picture         =   "Form1.frx":D227
       Top             =   1560
       Visible         =   0   'False
       Width           =   1110
@@ -321,7 +329,7 @@ Begin VB.Form Form1
    Begin VB.Image Image32 
       Height          =   1545
       Left            =   12960
-      Picture         =   "Form1.frx":D2AB
+      Picture         =   "Form1.frx":D7FD
       Top             =   1560
       Visible         =   0   'False
       Width           =   1110
@@ -329,7 +337,7 @@ Begin VB.Form Form1
    Begin VB.Image Image31 
       Height          =   1545
       Left            =   11880
-      Picture         =   "Form1.frx":D859
+      Picture         =   "Form1.frx":DDAB
       Top             =   1560
       Visible         =   0   'False
       Width           =   1080
@@ -337,7 +345,7 @@ Begin VB.Form Form1
    Begin VB.Image Image30 
       Height          =   1560
       Left            =   10800
-      Picture         =   "Form1.frx":DDD8
+      Picture         =   "Form1.frx":E32A
       Top             =   1560
       Visible         =   0   'False
       Width           =   1125
@@ -345,7 +353,7 @@ Begin VB.Form Form1
    Begin VB.Image Image29 
       Height          =   1545
       Left            =   9720
-      Picture         =   "Form1.frx":E376
+      Picture         =   "Form1.frx":E8C8
       Top             =   1560
       Visible         =   0   'False
       Width           =   1125
@@ -353,7 +361,7 @@ Begin VB.Form Form1
    Begin VB.Image Image28 
       Height          =   1545
       Left            =   8640
-      Picture         =   "Form1.frx":E8F0
+      Picture         =   "Form1.frx":EE42
       Top             =   1560
       Visible         =   0   'False
       Width           =   1095
@@ -361,7 +369,7 @@ Begin VB.Form Form1
    Begin VB.Image Image27 
       Height          =   1545
       Left            =   7560
-      Picture         =   "Form1.frx":EE2E
+      Picture         =   "Form1.frx":F380
       Top             =   1560
       Visible         =   0   'False
       Width           =   1125
@@ -369,7 +377,7 @@ Begin VB.Form Form1
    Begin VB.Image Image26 
       Height          =   1515
       Left            =   20520
-      Picture         =   "Form1.frx":F37E
+      Picture         =   "Form1.frx":F8D0
       Top             =   3120
       Visible         =   0   'False
       Width           =   1095
@@ -377,7 +385,7 @@ Begin VB.Form Form1
    Begin VB.Image Image25 
       Height          =   1530
       Left            =   19440
-      Picture         =   "Form1.frx":F8B9
+      Picture         =   "Form1.frx":FE0B
       Top             =   3120
       Visible         =   0   'False
       Width           =   1095
@@ -385,7 +393,7 @@ Begin VB.Form Form1
    Begin VB.Image Image24 
       Height          =   1515
       Left            =   18360
-      Picture         =   "Form1.frx":101A0
+      Picture         =   "Form1.frx":106F2
       Top             =   3120
       Visible         =   0   'False
       Width           =   1095
@@ -393,7 +401,7 @@ Begin VB.Form Form1
    Begin VB.Image Image23 
       Height          =   1545
       Left            =   17280
-      Picture         =   "Form1.frx":10ACB
+      Picture         =   "Form1.frx":1101D
       Top             =   3120
       Visible         =   0   'False
       Width           =   1125
@@ -401,7 +409,7 @@ Begin VB.Form Form1
    Begin VB.Image Image22 
       Height          =   1545
       Left            =   16200
-      Picture         =   "Form1.frx":11442
+      Picture         =   "Form1.frx":11994
       Top             =   3120
       Visible         =   0   'False
       Width           =   1125
@@ -409,7 +417,7 @@ Begin VB.Form Form1
    Begin VB.Image Image21 
       Height          =   1545
       Left            =   15120
-      Picture         =   "Form1.frx":11AA6
+      Picture         =   "Form1.frx":11FF8
       Top             =   3120
       Visible         =   0   'False
       Width           =   1110
@@ -417,7 +425,7 @@ Begin VB.Form Form1
    Begin VB.Image Image20 
       Height          =   1545
       Left            =   14040
-      Picture         =   "Form1.frx":120D7
+      Picture         =   "Form1.frx":12629
       Top             =   3120
       Visible         =   0   'False
       Width           =   1110
@@ -425,7 +433,7 @@ Begin VB.Form Form1
    Begin VB.Image Image19 
       Height          =   1530
       Left            =   12960
-      Picture         =   "Form1.frx":126FD
+      Picture         =   "Form1.frx":12C4F
       Top             =   3120
       Visible         =   0   'False
       Width           =   1110
@@ -433,7 +441,7 @@ Begin VB.Form Form1
    Begin VB.Image Image18 
       Height          =   1560
       Left            =   11880
-      Picture         =   "Form1.frx":12CDD
+      Picture         =   "Form1.frx":1322F
       Top             =   3120
       Visible         =   0   'False
       Width           =   1125
@@ -441,7 +449,7 @@ Begin VB.Form Form1
    Begin VB.Image Image17 
       Height          =   1545
       Left            =   10800
-      Picture         =   "Form1.frx":132D2
+      Picture         =   "Form1.frx":13824
       Top             =   3120
       Visible         =   0   'False
       Width           =   1125
@@ -449,7 +457,7 @@ Begin VB.Form Form1
    Begin VB.Image Image16 
       Height          =   1545
       Left            =   9720
-      Picture         =   "Form1.frx":13898
+      Picture         =   "Form1.frx":13DEA
       Top             =   3120
       Visible         =   0   'False
       Width           =   1125
@@ -457,7 +465,7 @@ Begin VB.Form Form1
    Begin VB.Image Image15 
       Height          =   1515
       Left            =   8640
-      Picture         =   "Form1.frx":13E3F
+      Picture         =   "Form1.frx":14391
       Top             =   3120
       Visible         =   0   'False
       Width           =   1095
@@ -465,7 +473,7 @@ Begin VB.Form Form1
    Begin VB.Image Image14 
       Height          =   1545
       Left            =   7560
-      Picture         =   "Form1.frx":143A0
+      Picture         =   "Form1.frx":148F2
       Top             =   3120
       Visible         =   0   'False
       Width           =   1110
@@ -473,7 +481,7 @@ Begin VB.Form Form1
    Begin VB.Image Image13 
       Height          =   1515
       Left            =   20520
-      Picture         =   "Form1.frx":148FC
+      Picture         =   "Form1.frx":14E4E
       Top             =   4680
       Visible         =   0   'False
       Width           =   1095
@@ -481,7 +489,7 @@ Begin VB.Form Form1
    Begin VB.Image Image12 
       Height          =   1560
       Left            =   19440
-      Picture         =   "Form1.frx":14E25
+      Picture         =   "Form1.frx":15377
       Top             =   4680
       Visible         =   0   'False
       Width           =   1095
@@ -489,7 +497,7 @@ Begin VB.Form Form1
    Begin VB.Image Image11 
       Height          =   1545
       Left            =   18360
-      Picture         =   "Form1.frx":1578E
+      Picture         =   "Form1.frx":15CE0
       Top             =   4680
       Visible         =   0   'False
       Width           =   1095
@@ -497,7 +505,7 @@ Begin VB.Form Form1
    Begin VB.Image Image10 
       Height          =   1545
       Left            =   17280
-      Picture         =   "Form1.frx":160BE
+      Picture         =   "Form1.frx":16610
       Top             =   4680
       Visible         =   0   'False
       Width           =   1125
@@ -505,7 +513,7 @@ Begin VB.Form Form1
    Begin VB.Image Image9 
       Height          =   1545
       Left            =   16200
-      Picture         =   "Form1.frx":16A7F
+      Picture         =   "Form1.frx":16FD1
       Top             =   4680
       Visible         =   0   'False
       Width           =   1125
@@ -513,7 +521,7 @@ Begin VB.Form Form1
    Begin VB.Image Image8 
       Height          =   1545
       Left            =   15120
-      Picture         =   "Form1.frx":170E6
+      Picture         =   "Form1.frx":17638
       Top             =   4680
       Visible         =   0   'False
       Width           =   1110
@@ -521,7 +529,7 @@ Begin VB.Form Form1
    Begin VB.Image Image7 
       Height          =   1545
       Left            =   14040
-      Picture         =   "Form1.frx":17712
+      Picture         =   "Form1.frx":17C64
       Top             =   4680
       Visible         =   0   'False
       Width           =   1110
@@ -529,7 +537,7 @@ Begin VB.Form Form1
    Begin VB.Image Image6 
       Height          =   1545
       Left            =   12960
-      Picture         =   "Form1.frx":17D28
+      Picture         =   "Form1.frx":1827A
       Top             =   4680
       Visible         =   0   'False
       Width           =   1110
@@ -537,7 +545,7 @@ Begin VB.Form Form1
    Begin VB.Image Image5 
       Height          =   1515
       Left            =   11880
-      Picture         =   "Form1.frx":18301
+      Picture         =   "Form1.frx":18853
       Top             =   4680
       Visible         =   0   'False
       Width           =   1080
@@ -545,7 +553,7 @@ Begin VB.Form Form1
    Begin VB.Image Image4 
       Height          =   1560
       Left            =   10800
-      Picture         =   "Form1.frx":188A6
+      Picture         =   "Form1.frx":18DF8
       Top             =   4680
       Visible         =   0   'False
       Width           =   1125
@@ -553,7 +561,7 @@ Begin VB.Form Form1
    Begin VB.Image Image3 
       Height          =   1545
       Left            =   9720
-      Picture         =   "Form1.frx":18E67
+      Picture         =   "Form1.frx":193B9
       Top             =   4680
       Visible         =   0   'False
       Width           =   1125
@@ -561,7 +569,7 @@ Begin VB.Form Form1
    Begin VB.Image Image2 
       Height          =   1545
       Left            =   8640
-      Picture         =   "Form1.frx":193FD
+      Picture         =   "Form1.frx":1994F
       Top             =   4680
       Visible         =   0   'False
       Width           =   1095
@@ -569,7 +577,7 @@ Begin VB.Form Form1
    Begin VB.Image Image1 
       Height          =   1545
       Left            =   7560
-      Picture         =   "Form1.frx":1995B
+      Picture         =   "Form1.frx":19EAD
       Top             =   4680
       Visible         =   0   'False
       Width           =   1110
@@ -749,6 +757,9 @@ ElseIf HandCard = "HandCards5" Then
 Image61.Picture = Image54.Picture
 ElseIf HandCard = "DealerCards1" Then
 'Image56.Picture = Image54.Picture
+'Actual Card in invisible off screen card
+Image65.Picture = Image54.Picture
+'Face down
 Image56.Picture = Image53.Picture
 ElseIf HandCard = "DealerCards2" Then
 Image57.Picture = Image54.Picture
@@ -836,7 +847,7 @@ Text1.Text = Text1.Text & vbCrLf & "Player has 21! Player Wins!"
 MsgBox "Player Wins"
 End If
 
-While DealerHand < 17:
+While DealerHand < 17 And GameStarted = True:
 If DealerHand <= 17 Then
 
 If DealerCards3 = Empty Then
@@ -844,6 +855,11 @@ If DealerCards3 = Empty Then
     DealerCards3 = Int(Rnd * 52 + 1)
     If Deck(DealerCards3) = False Then
     Deck(DealerCards3) = True
+    ElseIf Deck(DealerCards3) = True Then
+        While Deck(DealerCards3) = True:
+            DealerCards3 = Int(Rnd * 52 + 1)
+        Wend
+        Deck(DealerCards3) = True
     End If
     DealerCard3 = NewCard(Player, DealerCards3, "DealerCards3")
     UpdateText (DealerCard3)
@@ -852,6 +868,11 @@ ElseIf DealerCards4 = Empty Then
     DealerCards4 = Int(Rnd * 52 + 1)
     If Deck(DealerCards4) = False Then
     Deck(DealerCards4) = True
+    ElseIf Deck(DealerCards4) = True Then
+        While Deck(DealerCards4) = True:
+            DealerCards4 = Int(Rnd * 52 + 1)
+        Wend
+        Deck(DealerCards4) = True
     End If
     DealerCard4 = NewCard(Player, DealerCards4, "DealerCards4")
     UpdateText (DealerCard4)
@@ -860,6 +881,11 @@ ElseIf DealerCards5 = Empty Then
     DealerCards5 = Int(Rnd * 52 + 1)
     If Deck(DealerCards5) = False Then
     Deck(DealerCards5) = True
+    ElseIf Deck(DealerCards5) = True Then
+        While Deck(DealerCards5) = True:
+            DealerCards5 = Int(Rnd * 52 + 1)
+        Wend
+        Deck(DealerCards5) = True
     End If
     DealerCard5 = NewCard(Player, DealerCards5, "DealerCards5")
     UpdateText (DealerCard5)
@@ -869,40 +895,51 @@ End If
 
 Wend
 
-If NewHand >= 22 Then
+If NewHand >= 22 And GameStarted = True Then
 Text1.Text = Text1.Text & vbCrLf & "Player has: " & NewHand
 Text1.Text = Text1.Text & vbCrLf & "Dealer has: " & DealerHand
 Text1.Text = Text1.Text & vbCrLf & "Player has bust! Dealer Wins!"
 GameStarted = False
 GameEnded = True
 MsgBox "Dealer Wins"
-ElseIf DealerHand >= 22 Then
+Image56.Picture = Image65.Picture
+ElseIf DealerHand >= 22 And GameStarted = True Then
 Text1.Text = Text1.Text & vbCrLf & "Player has: " & NewHand
 Text1.Text = Text1.Text & vbCrLf & "Dealer has: " & DealerHand
 Text1.Text = Text1.Text & vbCrLf & "Dealer has bust! Player Wins!"
 GameStarted = False
 GameEnded = True
 MsgBox "Player Wins"
+Image56.Picture = Image65.Picture
 ElseIf NewHand > DealerHand And DealerHand <= 20 Then
-Text1.Text = Text1.Text & vbCrLf & "Player has: " & NewHand
-Text1.Text = Text1.Text & vbCrLf & "Dealer has: " & DealerHand
-Text1.Text = Text1.Text & vbCrLf & "Player wins!"
-GameStarted = False
-GameEnded = True
-MsgBox "Player Wins"
+    If GameStarted = True Then
+        Text1.Text = Text1.Text & vbCrLf & "Player has: " & NewHand
+        Text1.Text = Text1.Text & vbCrLf & "Dealer has: " & DealerHand
+        Text1.Text = Text1.Text & vbCrLf & "Player wins!"
+        GameStarted = False
+        GameEnded = True
+        MsgBox "Player Wins"
+        Image56.Picture = Image65.Picture
+    End If
 ElseIf DealerHand > NewHand And NewHand <= 20 Then
-Text1.Text = Text1.Text & vbCrLf & "Player has: " & NewHand
-Text1.Text = Text1.Text & vbCrLf & "Dealer has: " & DealerHand
-Text1.Text = Text1.Text & vbCrLf & "Player has lost! Dealer Wins!"
-GameStarted = False
-GameEnded = True
-MsgBox "Dealer Wins"
+    If GameStarted = True Then
+        Text1.Text = Text1.Text & vbCrLf & "Player has: " & NewHand
+        Text1.Text = Text1.Text & vbCrLf & "Dealer has: " & DealerHand
+        Text1.Text = Text1.Text & vbCrLf & "Player has lost! Dealer Wins!"
+        GameStarted = False
+        GameEnded = True
+        MsgBox "Dealer Wins"
+        Image56.Picture = Image65.Picture
+    End If
 End If
 
-If NewHand = DealerHand Then
+If NewHand = DealerHand And GameStarted = True Then
 Text1.Text = Text1.Text & vbCrLf & "Player has: " & NewHand
 Text1.Text = Text1.Text & vbCrLf & "Dealer has: " & DealerHand
 Text1.Text = Text1.Text & vbCrLf & "Draw"
+Image56.Picture = Image65.Picture
+GameStarted = False
+GameEnded = True
 End If
 
 End If
@@ -946,15 +983,28 @@ HandCards2 = Int(Rnd * 52 + 1)
 If HandCards1 = HandCards2 Then
 HandCards2 = Int(Rnd * 52 + 1)
 Deck(HandCards2) = True
+Else
+Deck(HandCards2) = True
 End If
 
 DealerCards1 = Int(Rnd * 52 + 1)
 If Deck(DealerCards1) = False Then
 Deck(DealerCards1) = True
+ElseIf Deck(DealerCards1) = True Then
+        While Deck(DealerCards1) = True:
+            DealerCards1 = Int(Rnd * 52 + 1)
+        Wend
+        Deck(DealerCards1) = True
 End If
+
 DealerCards2 = Int(Rnd * 52 + 1)
 If Deck(DealerCards2) = False Then
 Deck(DealerCards2) = True
+ElseIf Deck(DealerCards2) = True Then
+        While Deck(DealerCards2) = True:
+            DealerCards2 = Int(Rnd * 52 + 1)
+        Wend
+        Deck(DealerCards2) = True
 End If
 
 PlayerCard1 = NewCard(Player, HandCards1, "HandCards1")
@@ -973,7 +1023,7 @@ Unload Form1
 End Sub
 
 Private Sub Form_Load()
-Build = "0.02"
+Build = "0.03"
 Form1.Caption = "VGS-BlackJack v" & Build
 Text1.Text = "VGS-BlackJack v" & Build
 GameStarted = False
