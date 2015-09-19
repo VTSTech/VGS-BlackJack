@@ -899,7 +899,7 @@ GameEnded = True
 MsgBox "Dealer Wins"
 End If
 
-If NewHand = Dealer Then
+If NewHand = DealerHand Then
 Text1.Text = Text1.Text & vbCrLf & "Player has: " & NewHand
 Text1.Text = Text1.Text & vbCrLf & "Dealer has: " & DealerHand
 Text1.Text = Text1.Text & vbCrLf & "Draw"
@@ -933,7 +933,7 @@ HandCards3 = Empty
 HandCards4 = Empty
 HandCards5 = Empty
 
-Text1.Text = "VGS-BlackJack v0.01"
+Text1.Text = "VGS-BlackJack v" & Build
 '1-13 D
 '14-26 H
 '27-39 S
@@ -973,7 +973,9 @@ Unload Form1
 End Sub
 
 Private Sub Form_Load()
-Text1.Text = "VGS-BlackJack v0.01"
+Build = "0.02"
+Form1.Caption = "VGS-BlackJack v" & Build
+Text1.Text = "VGS-BlackJack v" & Build
 GameStarted = False
 GameEnded = True
 Cash = 1000
