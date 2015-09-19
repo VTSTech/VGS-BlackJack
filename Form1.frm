@@ -48,6 +48,17 @@ Begin VB.Form Form1
       Top             =   6240
       Width           =   5895
    End
+   Begin VB.Label Label2 
+      AutoSize        =   -1  'True
+      BackColor       =   &H0000C000&
+      Caption         =   "Cash: $1000"
+      ForeColor       =   &H0000FFFF&
+      Height          =   195
+      Left            =   4680
+      TabIndex        =   5
+      Top             =   6000
+      Width           =   900
+   End
    Begin VB.Image Image65 
       Height          =   1545
       Left            =   6480
@@ -832,19 +843,23 @@ End If
 End Sub
 
 Private Sub Command2_Click()
-If GameEnded = True Then
+If GameEnded = True Or Cash <= 0 Then
 MsgBox "Start a New Game first!"
 Else
 If NewHand = 21 And HandCards3 = Empty Then
 GameStarted = False
 GameEnded = True
 Text1.Text = Text1.Text & vbCrLf & "Player has BlackJack! Player Wins!"
-MsgBox "Player Wins"
+MsgBox "Player Wins (+$25 Bonus)"
+Cash = Cash + 225
+Label2.Caption = "Cash $" & Cash
 ElseIf NewHand = 21 Then
 GameStarted = False
 GameEnded = True
 Text1.Text = Text1.Text & vbCrLf & "Player has 21! Player Wins!"
 MsgBox "Player Wins"
+Cash = Cash + 200
+Label2.Caption = "Cash $" & Cash
 End If
 
 While DealerHand < 17 And GameStarted = True:
@@ -910,6 +925,8 @@ Text1.Text = Text1.Text & vbCrLf & "Dealer has bust! Player Wins!"
 GameStarted = False
 GameEnded = True
 MsgBox "Player Wins"
+Cash = Cash + 200
+Label2.Caption = "Cash $" & Cash
 Image56.Picture = Image65.Picture
 ElseIf NewHand > DealerHand And DealerHand <= 20 Then
     If GameStarted = True Then
@@ -919,6 +936,8 @@ ElseIf NewHand > DealerHand And DealerHand <= 20 Then
         GameStarted = False
         GameEnded = True
         MsgBox "Player Wins"
+        Cash = Cash + 200
+        Label2.Caption = "Cash $" & Cash
         Image56.Picture = Image65.Picture
     End If
 ElseIf DealerHand > NewHand And NewHand <= 20 Then
@@ -938,6 +957,8 @@ Text1.Text = Text1.Text & vbCrLf & "Player has: " & NewHand
 Text1.Text = Text1.Text & vbCrLf & "Dealer has: " & DealerHand
 Text1.Text = Text1.Text & vbCrLf & "Draw"
 Image56.Picture = Image65.Picture
+Cash = Cash + 100
+Label2.Caption = "Cash $" & Cash
 GameStarted = False
 GameEnded = True
 End If
@@ -950,6 +971,8 @@ Randomize Timer
 For x = 1 To 52
 Deck(x) = False
 Next x
+Cash = Cash - 100
+Label2.Caption = "Cash $" & Cash
 NewHand = 0
 DealerHand = 0
 GameEnded = False
@@ -1023,12 +1046,13 @@ Unload Form1
 End Sub
 
 Private Sub Form_Load()
-Build = "0.03"
+Build = "0.04"
 Form1.Caption = "VGS-BlackJack v" & Build
 Text1.Text = "VGS-BlackJack v" & Build
 GameStarted = False
 GameEnded = True
 Cash = 1000
+Label2.Caption = "Cash $" & Cash
 End Sub
 
 Private Sub Image13_Click()
