@@ -2,16 +2,34 @@ VERSION 5.00
 Begin VB.Form Form1 
    BackColor       =   &H0000C000&
    Caption         =   "VGS-BlackJack v0.01"
-   ClientHeight    =   8400
+   ClientHeight    =   9465
    ClientLeft      =   225
    ClientTop       =   855
    ClientWidth     =   5910
    LinkTopic       =   "Form1"
-   ScaleHeight     =   8400
+   ScaleHeight     =   9465
    ScaleWidth      =   5910
    StartUpPosition =   3  'Windows Default
+   Begin VB.CheckBox Check2 
+      BackColor       =   &H0000C000&
+      Caption         =   "Dealer Muck"
+      Height          =   255
+      Left            =   4080
+      TabIndex        =   8
+      Top             =   3120
+      Width           =   1215
+   End
+   Begin VB.CheckBox Check1 
+      BackColor       =   &H0000C000&
+      Caption         =   "Shuffle Each Hand"
+      Height          =   255
+      Left            =   4080
+      TabIndex        =   7
+      Top             =   3360
+      Width           =   1695
+   End
    Begin VB.CommandButton Command3 
-      Caption         =   "New Game"
+      Caption         =   "New Hand"
       Height          =   375
       Left            =   4680
       TabIndex        =   4
@@ -39,7 +57,7 @@ Begin VB.Form Form1
       Width           =   615
    End
    Begin VB.TextBox Text1 
-      Height          =   1815
+      Height          =   2895
       Left            =   0
       MultiLine       =   -1  'True
       ScrollBars      =   2  'Vertical
@@ -48,16 +66,35 @@ Begin VB.Form Form1
       Top             =   6240
       Width           =   5895
    End
+   Begin VB.Label Label3 
+      AutoSize        =   -1  'True
+      BackColor       =   &H0000C000&
+      Caption         =   "Cards Left: 52"
+      Height          =   195
+      Left            =   120
+      TabIndex        =   6
+      Top             =   6000
+      Width           =   990
+   End
    Begin VB.Label Label2 
       AutoSize        =   -1  'True
       BackColor       =   &H0000C000&
       Caption         =   "Cash: $1000"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H0000FFFF&
       Height          =   195
-      Left            =   4680
+      Left            =   4560
       TabIndex        =   5
       Top             =   6000
-      Width           =   900
+      Width           =   1080
    End
    Begin VB.Image Image65 
       Height          =   1545
@@ -129,9 +166,9 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   195
-      Left            =   2767
+      Left            =   2760
       TabIndex        =   3
-      Top             =   8160
+      Top             =   9240
       Width           =   390
    End
    Begin VB.Image Image58 
@@ -610,11 +647,11 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim Deck(52)
 Dim HandCards1, HandCards2, HandCards3, HandCards4, HandCards5, ValueCards1, ValueCards2, NewHand, DealerHand
-Dim CardImage, CardIndex, PlayerorNPC, HandCard, ValueCard
-Dim GameStarted, GameEnded As Boolean
-Dim Cash As Integer
-Public Function NewCard(PlayerorNPC, CardIndex, HandCard)
-
+Dim CardImage, CardIndex, PlayerOrNPC, HandCard, ValueCard, Build
+Dim GameStarted, GameEnded, PlayerHasAce, DealerHasAce As Boolean
+Dim Cash, CardsLeft As Integer
+Public Function NewCard(PlayerOrNPC, CardIndex, HandCard)
+CardsLeft = CardsLeft - 1
 For x = 1 To 52 Step 13
 
 If CardIndex = x Then
@@ -655,6 +692,16 @@ ValueCard = 10
 End If
 If CardIndex = x + 12 Then
 ValueCard = 11
+'MsgBox "Player Total: " & NewHand & " Dealer Total: " & DealerHand
+    If PlayerOrNPC = "Player" Then
+        PlayerHasAce = True
+         If NewHand >= 11 Then ValueCard = 1
+    End If
+    If PlayerOrNPC = "Dealer" Then
+        DealerHasAce = True
+         If DealerHand >= 11 Then ValueCard = 1
+    End If
+
 End If
 
 Next x
@@ -754,6 +801,14 @@ ElseIf ValueCard & CardSuit = "94" Then
 Image54.Picture = Image47.Picture
 ElseIf ValueCard & CardSuit = "104" Then
 Image54.Picture = Image48.Picture
+ElseIf ValueCard & CardSuit = "14" Then
+Image54.Picture = Image52.Picture
+ElseIf ValueCard & CardSuit = "13" Then
+Image54.Picture = Image39.Picture
+ElseIf ValueCard & CardSuit = "12" Then
+Image54.Picture = Image13.Picture
+ElseIf ValueCard & CardSuit = "11" Then
+Image54.Picture = Image26.Picture
 End If
 
 If HandCard = "HandCards1" Then
@@ -795,13 +850,31 @@ HandCard = Split(HandCard, ",")
 
 If HandCard(0) = "HandCards1" Or HandCard(0) = "HandCards2" Or HandCard(0) = "HandCards3" Or HandCard(0) = "HandCards4" Or HandCard(0) = "HandCards5" Then
 Text1.Text = Text1.Text & vbCrLf & "Player draws " & HandCard(1) & " of " & HandCard(2)
+
+If (NewHand + HandCard(1) >= 22) And PlayerHasAce = True Then
+NewHand = NewHand + HandCard(1) - 10
+PlayerHasAce = False
+Else
 NewHand = NewHand + HandCard(1)
-'Text1.Text = Text1.Text & vbCrLf & "Player has: " & NewHand
+End If
+Text1.Text = Text1.Text & vbCrLf & "Player has: " & NewHand
+    If NewHand >= 22 And PlayerHasAce = False Then
+        'Text1.Text = Text1.Text & vbCrLf & "Player has: " & NewHand
+        Text1.Text = Text1.Text & vbCrLf & "Player has bust! Dealer Wins!"
+        GameStarted = False
+        GameEnded = True
+        MsgBox "Dealer Wins"
+    End If
 End If
 
 If HandCard(0) = "DealerCards1" Or HandCard(0) = "DealerCards2" Or HandCard(0) = "DealerCards3" Or HandCard(0) = "DealerCards4" Or HandCard(0) = "DealerCards5" Then
 'Text1.Text = Text1.Text & vbCrLf & "Dealer draws " & HandCard(1) & " of " & HandCard(2)
+If (DealerHand + HandCard(1) >= 22) And DealerHasAce = True Then
+DealerHand = DealerHand + HandCard(1) - 10
+DealerHasAce = False
+Else
 DealerHand = DealerHand + HandCard(1)
+End If
 'Text1.Text = Text1.Text & vbCrLf & "Dealer has: " & DealerHand
 End If
 
@@ -820,7 +893,7 @@ If HandCards3 = Empty Then
     If Deck(HandCards3) = False Then
     Deck(HandCards3) = True
     End If
-    PlayerCard3 = NewCard(Player, HandCards3, "HandCards3")
+    PlayerCard3 = NewCard("Player", HandCards3, "HandCards3")
     UpdateText (PlayerCard3)
 ElseIf HandCards4 = Empty Then
     Image60.Visible = True
@@ -828,7 +901,7 @@ ElseIf HandCards4 = Empty Then
     If Deck(HandCards4) = False Then
     Deck(HandCards4) = True
     End If
-    PlayerCard4 = NewCard(Player, HandCards4, "HandCards4")
+    PlayerCard4 = NewCard("Player", HandCards4, "HandCards4")
     UpdateText (PlayerCard4)
 ElseIf HandCards5 = Empty Then
     Image61.Visible = True
@@ -836,8 +909,10 @@ ElseIf HandCards5 = Empty Then
     If Deck(HandCards5) = False Then
     Deck(HandCards5) = True
     End If
-    PlayerCard5 = NewCard(Player, HandCards5, "HandCards5")
+    PlayerCard5 = NewCard("Player", HandCards5, "HandCards5")
     UpdateText (PlayerCard5)
+Else
+Command2.Value = True
 End If
 End If
 End Sub
@@ -852,14 +927,14 @@ GameEnded = True
 Text1.Text = Text1.Text & vbCrLf & "Player has BlackJack! Player Wins!"
 MsgBox "Player Wins (+$25 Bonus)"
 Cash = Cash + 225
-Label2.Caption = "Cash $" & Cash
+If Check2.Value = 0 Then Image56.Picture = Image65.Picture
 ElseIf NewHand = 21 Then
 GameStarted = False
 GameEnded = True
 Text1.Text = Text1.Text & vbCrLf & "Player has 21! Player Wins!"
 MsgBox "Player Wins"
 Cash = Cash + 200
-Label2.Caption = "Cash $" & Cash
+If Check2.Value = 0 Then Image56.Picture = Image65.Picture
 End If
 
 While DealerHand < 17 And GameStarted = True:
@@ -876,7 +951,7 @@ If DealerCards3 = Empty Then
         Wend
         Deck(DealerCards3) = True
     End If
-    DealerCard3 = NewCard(Player, DealerCards3, "DealerCards3")
+    DealerCard3 = NewCard("Dealer", DealerCards3, "DealerCards3")
     UpdateText (DealerCard3)
 ElseIf DealerCards4 = Empty Then
     Image63.Visible = True
@@ -889,7 +964,7 @@ ElseIf DealerCards4 = Empty Then
         Wend
         Deck(DealerCards4) = True
     End If
-    DealerCard4 = NewCard(Player, DealerCards4, "DealerCards4")
+    DealerCard4 = NewCard("Dealer", DealerCards4, "DealerCards4")
     UpdateText (DealerCard4)
 ElseIf DealerCards5 = Empty Then
     Image64.Visible = True
@@ -902,8 +977,13 @@ ElseIf DealerCards5 = Empty Then
         Wend
         Deck(DealerCards5) = True
     End If
-    DealerCard5 = NewCard(Player, DealerCards5, "DealerCards5")
+    DealerCard5 = NewCard("Dealer", DealerCards5, "DealerCards5")
     UpdateText (DealerCard5)
+Else
+GameStarted = False
+GameEnded = True
+MsgBox "Player Wins"
+Cash = Cash + 200
 End If
 
 End If
@@ -917,7 +997,7 @@ Text1.Text = Text1.Text & vbCrLf & "Player has bust! Dealer Wins!"
 GameStarted = False
 GameEnded = True
 MsgBox "Dealer Wins"
-Image56.Picture = Image65.Picture
+If Check2.Value = 0 Then Image56.Picture = Image65.Picture
 ElseIf DealerHand >= 22 And GameStarted = True Then
 Text1.Text = Text1.Text & vbCrLf & "Player has: " & NewHand
 Text1.Text = Text1.Text & vbCrLf & "Dealer has: " & DealerHand
@@ -926,8 +1006,7 @@ GameStarted = False
 GameEnded = True
 MsgBox "Player Wins"
 Cash = Cash + 200
-Label2.Caption = "Cash $" & Cash
-Image56.Picture = Image65.Picture
+If Check2.Value = 0 Then Image56.Picture = Image65.Picture
 ElseIf NewHand > DealerHand And DealerHand <= 20 Then
     If GameStarted = True Then
         Text1.Text = Text1.Text & vbCrLf & "Player has: " & NewHand
@@ -937,8 +1016,7 @@ ElseIf NewHand > DealerHand And DealerHand <= 20 Then
         GameEnded = True
         MsgBox "Player Wins"
         Cash = Cash + 200
-        Label2.Caption = "Cash $" & Cash
-        Image56.Picture = Image65.Picture
+        If Check2.Value = 0 Then Image56.Picture = Image65.Picture
     End If
 ElseIf DealerHand > NewHand And NewHand <= 20 Then
     If GameStarted = True Then
@@ -948,7 +1026,7 @@ ElseIf DealerHand > NewHand And NewHand <= 20 Then
         GameStarted = False
         GameEnded = True
         MsgBox "Dealer Wins"
-        Image56.Picture = Image65.Picture
+        If Check2.Value = 0 Then Image56.Picture = Image65.Picture
     End If
 End If
 
@@ -956,9 +1034,8 @@ If NewHand = DealerHand And GameStarted = True Then
 Text1.Text = Text1.Text & vbCrLf & "Player has: " & NewHand
 Text1.Text = Text1.Text & vbCrLf & "Dealer has: " & DealerHand
 Text1.Text = Text1.Text & vbCrLf & "Draw"
-Image56.Picture = Image65.Picture
+If Check2.Value = 0 Then Image56.Picture = Image65.Picture
 Cash = Cash + 100
-Label2.Caption = "Cash $" & Cash
 GameStarted = False
 GameEnded = True
 End If
@@ -968,15 +1045,23 @@ End Sub
 
 Private Sub Command3_Click()
 Randomize Timer
-For x = 1 To 52
-Deck(x) = False
-Next x
+
+If Check1.Value = 1 Or CardsLeft <= 10 Then
+    If CardsLeft <= 10 Then MsgBox ("Not enough cards! Shuffling deck.")
+        CardsLeft = 52
+        For x = 1 To 52
+        Deck(x) = False
+        Next x
+End If
+
 Cash = Cash - 100
 Label2.Caption = "Cash $" & Cash
 NewHand = 0
 DealerHand = 0
 GameEnded = False
 GameStarted = True
+PlayerHasAce = False
+DealerHasAce = False
 Image62.Visible = False
 Image63.Visible = False
 Image64.Visible = False
@@ -1030,15 +1115,14 @@ ElseIf Deck(DealerCards2) = True Then
         Deck(DealerCards2) = True
 End If
 
-PlayerCard1 = NewCard(Player, HandCards1, "HandCards1")
+PlayerCard1 = NewCard("Player", HandCards1, "HandCards1")
 UpdateText (PlayerCard1)
-PlayerCard2 = NewCard(Player, HandCards2, "HandCards2")
+PlayerCard2 = NewCard("Player", HandCards2, "HandCards2")
 UpdateText (PlayerCard2)
-DealerCard1 = NewCard(Dealer, DealerCards1, "DealerCards1")
+DealerCard1 = NewCard("Dealer", DealerCards1, "DealerCards1")
 UpdateText (DealerCard1)
-DealerCard2 = NewCard(Dealer, DealerCards2, "DealerCards2")
+DealerCard2 = NewCard("Dealer", DealerCards2, "DealerCards2")
 UpdateText (DealerCard2)
-
 End Sub
 
 Private Sub Exit_Click()
@@ -1046,13 +1130,16 @@ Unload Form1
 End Sub
 
 Private Sub Form_Load()
-Build = "0.04"
+Build = "0.4.1"
 Form1.Caption = "VGS-BlackJack v" & Build
 Text1.Text = "VGS-BlackJack v" & Build
 GameStarted = False
 GameEnded = True
 Cash = 1000
+CardsLeft = 52
 Label2.Caption = "Cash $" & Cash
+Timer1.Interval = 1000
+Timer1.Enabled = True
 End Sub
 
 Private Sub Image13_Click()
@@ -1091,3 +1178,7 @@ Private Sub Image58_Click()
 'Player Hand 2
 End Sub
 
+Private Sub Timer1_Timer()
+Label3.Caption = "Cards Left: " & CardsLeft
+Label2.Caption = "Cash $" & Cash
+End Sub
