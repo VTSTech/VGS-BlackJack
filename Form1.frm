@@ -1,15 +1,49 @@
 VERSION 5.00
 Begin VB.Form Form1 
    BackColor       =   &H0000C000&
-   Caption         =   "VGS-BlackJack v0.01"
+   Caption         =   "VGS-BlackJack v"
    ClientHeight    =   9465
    ClientLeft      =   225
    ClientTop       =   855
-   ClientWidth     =   5910
+   ClientWidth     =   6015
    LinkTopic       =   "Form1"
    ScaleHeight     =   9465
-   ScaleWidth      =   5910
+   ScaleWidth      =   6015
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton Command5 
+      Caption         =   "-"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   300
+      Left            =   2760
+      TabIndex        =   10
+      Top             =   3000
+      Width           =   255
+   End
+   Begin VB.CommandButton Command4 
+      Caption         =   "+"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   300
+      Left            =   3120
+      TabIndex        =   9
+      Top             =   3000
+      Width           =   255
+   End
    Begin VB.CheckBox Check2 
       BackColor       =   &H0000C000&
       Caption         =   "Dealer Muck"
@@ -64,7 +98,27 @@ Begin VB.Form Form1
       TabIndex        =   0
       Text            =   "Form1.frx":0000
       Top             =   6240
-      Width           =   5895
+      Width           =   6015
+   End
+   Begin VB.Label Label4 
+      AutoSize        =   -1  'True
+      BackColor       =   &H0000C000&
+      Caption         =   "Bet: $100"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0000FFFF&
+      Height          =   195
+      Left            =   2640
+      TabIndex        =   11
+      Top             =   3360
+      Width           =   840
    End
    Begin VB.Label Label3 
       AutoSize        =   -1  'True
@@ -91,66 +145,73 @@ Begin VB.Form Form1
       EndProperty
       ForeColor       =   &H0000FFFF&
       Height          =   195
-      Left            =   4560
+      Left            =   4440
       TabIndex        =   5
       Top             =   6000
       Width           =   1080
    End
    Begin VB.Image Image65 
-      Height          =   1545
+      Height          =   1500
       Left            =   6480
       Picture         =   "Form1.frx":0016
+      Stretch         =   -1  'True
       Top             =   6240
       Visible         =   0   'False
-      Width           =   1110
+      Width           =   1200
    End
    Begin VB.Image Image64 
-      Height          =   1485
+      Height          =   1500
       Left            =   4800
-      Picture         =   "Form1.frx":0568
+      Picture         =   "Form1.frx":0EAD
+      Stretch         =   -1  'True
       Top             =   240
       Visible         =   0   'False
-      Width           =   1080
+      Width           =   1200
    End
    Begin VB.Image Image63 
-      Height          =   1485
-      Left            =   3720
-      Picture         =   "Form1.frx":0BB0
+      Height          =   1500
+      Left            =   3600
+      Picture         =   "Form1.frx":14F5
+      Stretch         =   -1  'True
       Top             =   240
       Visible         =   0   'False
-      Width           =   1080
+      Width           =   1200
    End
    Begin VB.Image Image62 
-      Height          =   1485
-      Left            =   2640
-      Picture         =   "Form1.frx":11F8
+      Height          =   1500
+      Left            =   2400
+      Picture         =   "Form1.frx":1B3D
+      Stretch         =   -1  'True
       Top             =   240
       Visible         =   0   'False
-      Width           =   1080
+      Width           =   1200
    End
    Begin VB.Image Image61 
-      Height          =   1485
+      Height          =   1500
       Left            =   4800
-      Picture         =   "Form1.frx":1840
+      Picture         =   "Form1.frx":2185
+      Stretch         =   -1  'True
       Top             =   3720
       Visible         =   0   'False
-      Width           =   1080
+      Width           =   1200
    End
    Begin VB.Image Image60 
-      Height          =   1485
-      Left            =   3720
-      Picture         =   "Form1.frx":1E88
+      Height          =   1500
+      Left            =   3600
+      Picture         =   "Form1.frx":27CD
+      Stretch         =   -1  'True
       Top             =   3720
       Visible         =   0   'False
-      Width           =   1080
+      Width           =   1200
    End
    Begin VB.Image Image59 
-      Height          =   1485
-      Left            =   2640
-      Picture         =   "Form1.frx":24D0
+      Height          =   1500
+      Left            =   2400
+      Picture         =   "Form1.frx":2E15
+      Stretch         =   -1  'True
       Top             =   3720
       Visible         =   0   'False
-      Width           =   1080
+      Width           =   1200
    End
    Begin VB.Label Label1 
       AutoSize        =   -1  'True
@@ -172,463 +233,521 @@ Begin VB.Form Form1
       Width           =   390
    End
    Begin VB.Image Image58 
-      Height          =   1485
-      Left            =   1320
-      Picture         =   "Form1.frx":2B18
+      Height          =   1500
+      Left            =   1200
+      Picture         =   "Form1.frx":345D
+      Stretch         =   -1  'True
       Top             =   3720
-      Width           =   1080
+      Width           =   1200
    End
    Begin VB.Image Image57 
-      Height          =   1485
-      Left            =   1320
-      Picture         =   "Form1.frx":3160
+      Height          =   1500
+      Left            =   1200
+      Picture         =   "Form1.frx":3AA5
+      Stretch         =   -1  'True
       Top             =   240
-      Width           =   1080
+      Width           =   1200
    End
    Begin VB.Image Image56 
-      Height          =   1485
-      Left            =   240
-      Picture         =   "Form1.frx":37A8
+      Height          =   1500
+      Left            =   0
+      Picture         =   "Form1.frx":40ED
+      Stretch         =   -1  'True
       Top             =   240
-      Width           =   1080
+      Width           =   1200
    End
    Begin VB.Image Image55 
-      Height          =   1485
-      Left            =   240
-      Picture         =   "Form1.frx":3DF0
+      Height          =   1500
+      Left            =   0
+      Picture         =   "Form1.frx":4735
+      Stretch         =   -1  'True
       Top             =   3720
-      Width           =   1080
+      Width           =   1200
    End
    Begin VB.Image Image54 
-      Height          =   1485
+      Height          =   1500
       Left            =   480
-      Picture         =   "Form1.frx":4438
+      Picture         =   "Form1.frx":4D7D
+      Stretch         =   -1  'True
       Top             =   1920
-      Width           =   1080
+      Width           =   1200
    End
    Begin VB.Image Image53 
-      Height          =   1485
+      Height          =   1500
       Left            =   6480
-      Picture         =   "Form1.frx":4A80
+      Picture         =   "Form1.frx":53C5
+      Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
-      Width           =   1080
+      Width           =   1200
    End
    Begin VB.Image Image52 
-      Height          =   1545
+      Height          =   1500
       Left            =   20520
-      Picture         =   "Form1.frx":50C8
+      Picture         =   "Form1.frx":5A0D
+      Stretch         =   -1  'True
       Top             =   0
       Visible         =   0   'False
-      Width           =   1110
+      Width           =   1200
    End
    Begin VB.Image Image51 
-      Height          =   1560
+      Height          =   1500
       Left            =   19440
-      Picture         =   "Form1.frx":5606
+      Picture         =   "Form1.frx":68A4
+      Stretch         =   -1  'True
       Top             =   0
       Visible         =   0   'False
-      Width           =   1095
+      Width           =   1200
    End
    Begin VB.Image Image50 
-      Height          =   1545
+      Height          =   1500
       Left            =   18360
-      Picture         =   "Form1.frx":5EE5
+      Picture         =   "Form1.frx":853A
+      Stretch         =   -1  'True
       Top             =   0
       Visible         =   0   'False
-      Width           =   1095
+      Width           =   1200
    End
    Begin VB.Image Image49 
-      Height          =   1545
+      Height          =   1500
       Left            =   17280
-      Picture         =   "Form1.frx":6805
+      Picture         =   "Form1.frx":A224
+      Stretch         =   -1  'True
       Top             =   0
       Visible         =   0   'False
-      Width           =   1125
+      Width           =   1200
    End
    Begin VB.Image Image48 
-      Height          =   1545
+      Height          =   1500
       Left            =   16200
-      Picture         =   "Form1.frx":7130
+      Picture         =   "Form1.frx":BB9B
+      Stretch         =   -1  'True
       Top             =   0
       Visible         =   0   'False
-      Width           =   1125
+      Width           =   1200
    End
    Begin VB.Image Image47 
-      Height          =   1545
+      Height          =   1500
       Left            =   15120
-      Picture         =   "Form1.frx":7788
+      Picture         =   "Form1.frx":D84C
+      Stretch         =   -1  'True
       Top             =   0
       Visible         =   0   'False
-      Width           =   1125
+      Width           =   1200
    End
    Begin VB.Image Image46 
-      Height          =   1545
+      Height          =   1500
       Left            =   14040
-      Picture         =   "Form1.frx":7DC6
+      Picture         =   "Form1.frx":F21C
+      Stretch         =   -1  'True
       Top             =   0
       Visible         =   0   'False
-      Width           =   1110
+      Width           =   1200
    End
    Begin VB.Image Image45 
-      Height          =   1545
+      Height          =   1500
       Left            =   12960
-      Picture         =   "Form1.frx":83BF
+      Picture         =   "Form1.frx":10B5D
+      Stretch         =   -1  'True
       Top             =   0
       Visible         =   0   'False
-      Width           =   1110
+      Width           =   1200
    End
    Begin VB.Image Image44 
-      Height          =   1545
+      Height          =   1500
       Left            =   11880
-      Picture         =   "Form1.frx":8982
+      Picture         =   "Form1.frx":1216F
+      Stretch         =   -1  'True
       Top             =   0
       Visible         =   0   'False
-      Width           =   1080
+      Width           =   1200
    End
    Begin VB.Image Image43 
-      Height          =   1560
+      Height          =   1500
       Left            =   10680
-      Picture         =   "Form1.frx":8F1B
+      Picture         =   "Form1.frx":1364E
+      Stretch         =   -1  'True
       Top             =   0
       Visible         =   0   'False
-      Width           =   1125
+      Width           =   1200
    End
    Begin VB.Image Image42 
-      Height          =   1545
+      Height          =   1500
       Left            =   9600
-      Picture         =   "Form1.frx":94D6
+      Picture         =   "Form1.frx":14999
+      Stretch         =   -1  'True
       Top             =   0
       Visible         =   0   'False
-      Width           =   1125
+      Width           =   1200
    End
    Begin VB.Image Image41 
-      Height          =   1545
+      Height          =   1500
       Left            =   8520
-      Picture         =   "Form1.frx":9A6B
+      Picture         =   "Form1.frx":15A72
+      Stretch         =   -1  'True
       Top             =   0
       Visible         =   0   'False
-      Width           =   1095
+      Width           =   1200
    End
    Begin VB.Image Image40 
-      Height          =   1545
+      Height          =   1500
       Left            =   7440
-      Picture         =   "Form1.frx":9FB5
+      Picture         =   "Form1.frx":16AD3
+      Stretch         =   -1  'True
       Top             =   0
       Visible         =   0   'False
-      Width           =   1110
+      Width           =   1200
    End
    Begin VB.Image Image39 
-      Height          =   1545
+      Height          =   1500
       Left            =   20520
-      Picture         =   "Form1.frx":A4EB
+      Picture         =   "Form1.frx":17912
+      Stretch         =   -1  'True
       Top             =   1560
       Visible         =   0   'False
-      Width           =   1110
+      Width           =   1200
    End
    Begin VB.Image Image38 
-      Height          =   1560
+      Height          =   1500
       Left            =   19440
-      Picture         =   "Form1.frx":AA3D
+      Picture         =   "Form1.frx":1875E
+      Stretch         =   -1  'True
       Top             =   1560
       Visible         =   0   'False
-      Width           =   1095
+      Width           =   1200
    End
    Begin VB.Image Image37 
-      Height          =   1560
+      Height          =   1500
       Left            =   18360
-      Picture         =   "Form1.frx":B34F
+      Picture         =   "Form1.frx":1A2DC
+      Stretch         =   -1  'True
       Top             =   1560
       Visible         =   0   'False
-      Width           =   1095
+      Width           =   1200
    End
    Begin VB.Image Image36 
-      Height          =   1545
+      Height          =   1500
       Left            =   17280
-      Picture         =   "Form1.frx":BCC5
+      Picture         =   "Form1.frx":1BF84
+      Stretch         =   -1  'True
       Top             =   1560
       Visible         =   0   'False
-      Width           =   1125
+      Width           =   1200
    End
    Begin VB.Image Image35 
-      Height          =   1545
+      Height          =   1500
       Left            =   16200
-      Picture         =   "Form1.frx":C60C
+      Picture         =   "Form1.frx":1D914
+      Stretch         =   -1  'True
       Top             =   1560
       Visible         =   0   'False
-      Width           =   1125
+      Width           =   1200
    End
    Begin VB.Image Image34 
-      Height          =   1545
+      Height          =   1500
       Left            =   15120
-      Picture         =   "Form1.frx":CC37
+      Picture         =   "Form1.frx":1F6C4
+      Stretch         =   -1  'True
       Top             =   1560
       Visible         =   0   'False
-      Width           =   1125
+      Width           =   1200
    End
    Begin VB.Image Image33 
-      Height          =   1545
+      Height          =   1500
       Left            =   14040
-      Picture         =   "Form1.frx":D227
+      Picture         =   "Form1.frx":211A6
+      Stretch         =   -1  'True
       Top             =   1560
       Visible         =   0   'False
-      Width           =   1110
+      Width           =   1200
    End
    Begin VB.Image Image32 
-      Height          =   1545
+      Height          =   1500
       Left            =   12960
-      Picture         =   "Form1.frx":D7FD
+      Picture         =   "Form1.frx":22AEE
+      Stretch         =   -1  'True
       Top             =   1560
       Visible         =   0   'False
-      Width           =   1110
+      Width           =   1200
    End
    Begin VB.Image Image31 
-      Height          =   1545
+      Height          =   1500
       Left            =   11880
-      Picture         =   "Form1.frx":DDAB
+      Picture         =   "Form1.frx":24184
+      Stretch         =   -1  'True
       Top             =   1560
       Visible         =   0   'False
-      Width           =   1080
+      Width           =   1200
    End
    Begin VB.Image Image30 
-      Height          =   1560
+      Height          =   1500
       Left            =   10800
-      Picture         =   "Form1.frx":E32A
+      Picture         =   "Form1.frx":25729
+      Stretch         =   -1  'True
       Top             =   1560
       Visible         =   0   'False
-      Width           =   1125
+      Width           =   1200
    End
    Begin VB.Image Image29 
-      Height          =   1545
+      Height          =   1500
       Left            =   9720
-      Picture         =   "Form1.frx":E8C8
+      Picture         =   "Form1.frx":26AA1
+      Stretch         =   -1  'True
       Top             =   1560
       Visible         =   0   'False
-      Width           =   1125
+      Width           =   1200
    End
    Begin VB.Image Image28 
-      Height          =   1545
+      Height          =   1500
       Left            =   8640
-      Picture         =   "Form1.frx":EE42
+      Picture         =   "Form1.frx":27BF0
+      Stretch         =   -1  'True
       Top             =   1560
       Visible         =   0   'False
-      Width           =   1095
+      Width           =   1200
    End
    Begin VB.Image Image27 
-      Height          =   1545
+      Height          =   1500
       Left            =   7560
-      Picture         =   "Form1.frx":F380
+      Picture         =   "Form1.frx":28B8A
+      Stretch         =   -1  'True
       Top             =   1560
       Visible         =   0   'False
-      Width           =   1125
+      Width           =   1200
    End
    Begin VB.Image Image26 
-      Height          =   1515
+      Height          =   1500
       Left            =   20520
-      Picture         =   "Form1.frx":F8D0
+      Picture         =   "Form1.frx":29956
+      Stretch         =   -1  'True
       Top             =   3120
       Visible         =   0   'False
-      Width           =   1095
+      Width           =   1200
    End
    Begin VB.Image Image25 
-      Height          =   1530
+      Height          =   1500
       Left            =   19440
-      Picture         =   "Form1.frx":FE0B
+      Picture         =   "Form1.frx":2A71A
+      Stretch         =   -1  'True
       Top             =   3120
       Visible         =   0   'False
-      Width           =   1095
+      Width           =   1200
    End
    Begin VB.Image Image24 
-      Height          =   1515
+      Height          =   1500
       Left            =   18360
-      Picture         =   "Form1.frx":106F2
+      Picture         =   "Form1.frx":2C2D7
+      Stretch         =   -1  'True
       Top             =   3120
       Visible         =   0   'False
-      Width           =   1095
+      Width           =   1200
    End
    Begin VB.Image Image23 
-      Height          =   1545
+      Height          =   1500
       Left            =   17280
-      Picture         =   "Form1.frx":1101D
+      Picture         =   "Form1.frx":2DF30
+      Stretch         =   -1  'True
       Top             =   3120
       Visible         =   0   'False
-      Width           =   1125
+      Width           =   1200
    End
    Begin VB.Image Image22 
-      Height          =   1545
+      Height          =   1500
       Left            =   16200
-      Picture         =   "Form1.frx":11994
+      Picture         =   "Form1.frx":2F8E2
+      Stretch         =   -1  'True
       Top             =   3120
       Visible         =   0   'False
-      Width           =   1125
+      Width           =   1200
    End
    Begin VB.Image Image21 
-      Height          =   1545
+      Height          =   1500
       Left            =   15120
-      Picture         =   "Form1.frx":11FF8
+      Picture         =   "Form1.frx":31353
+      Stretch         =   -1  'True
       Top             =   3120
       Visible         =   0   'False
-      Width           =   1110
+      Width           =   1200
    End
    Begin VB.Image Image20 
-      Height          =   1545
+      Height          =   1500
       Left            =   14040
-      Picture         =   "Form1.frx":12629
+      Picture         =   "Form1.frx":32AB9
+      Stretch         =   -1  'True
       Top             =   3120
       Visible         =   0   'False
-      Width           =   1110
+      Width           =   1200
    End
    Begin VB.Image Image19 
-      Height          =   1530
+      Height          =   1500
       Left            =   12960
-      Picture         =   "Form1.frx":12C4F
+      Picture         =   "Form1.frx":340F0
+      Stretch         =   -1  'True
       Top             =   3120
       Visible         =   0   'False
-      Width           =   1110
+      Width           =   1200
    End
    Begin VB.Image Image18 
-      Height          =   1560
+      Height          =   1500
       Left            =   11880
-      Picture         =   "Form1.frx":1322F
+      Picture         =   "Form1.frx":354F5
+      Stretch         =   -1  'True
       Top             =   3120
       Visible         =   0   'False
-      Width           =   1125
+      Width           =   1200
    End
    Begin VB.Image Image17 
-      Height          =   1545
+      Height          =   1500
       Left            =   10800
-      Picture         =   "Form1.frx":13824
+      Picture         =   "Form1.frx":36835
+      Stretch         =   -1  'True
       Top             =   3120
       Visible         =   0   'False
-      Width           =   1125
+      Width           =   1200
    End
    Begin VB.Image Image16 
-      Height          =   1545
+      Height          =   1500
       Left            =   9720
-      Picture         =   "Form1.frx":13DEA
+      Picture         =   "Form1.frx":379DB
+      Stretch         =   -1  'True
       Top             =   3120
       Visible         =   0   'False
-      Width           =   1125
+      Width           =   1200
    End
    Begin VB.Image Image15 
-      Height          =   1515
+      Height          =   1500
       Left            =   8640
-      Picture         =   "Form1.frx":14391
+      Picture         =   "Form1.frx":3896C
+      Stretch         =   -1  'True
       Top             =   3120
       Visible         =   0   'False
-      Width           =   1095
+      Width           =   1200
    End
    Begin VB.Image Image14 
-      Height          =   1545
+      Height          =   1500
       Left            =   7560
-      Picture         =   "Form1.frx":148F2
+      Picture         =   "Form1.frx":3986E
+      Stretch         =   -1  'True
       Top             =   3120
       Visible         =   0   'False
-      Width           =   1110
+      Width           =   1200
    End
    Begin VB.Image Image13 
-      Height          =   1515
+      Height          =   1500
       Left            =   20520
-      Picture         =   "Form1.frx":14E4E
+      Picture         =   "Form1.frx":3A5B4
+      Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
-      Width           =   1095
+      Width           =   1200
    End
    Begin VB.Image Image12 
-      Height          =   1560
+      Height          =   1500
       Left            =   19440
-      Picture         =   "Form1.frx":15377
+      Picture         =   "Form1.frx":3B214
+      Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
-      Width           =   1095
+      Width           =   1200
    End
    Begin VB.Image Image11 
-      Height          =   1545
+      Height          =   1500
       Left            =   18360
-      Picture         =   "Form1.frx":15CE0
+      Picture         =   "Form1.frx":3CD55
+      Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
-      Width           =   1095
+      Width           =   1200
    End
    Begin VB.Image Image10 
-      Height          =   1545
+      Height          =   1500
       Left            =   17280
-      Picture         =   "Form1.frx":16610
+      Picture         =   "Form1.frx":3E9AE
+      Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
-      Width           =   1125
+      Width           =   1200
    End
    Begin VB.Image Image9 
-      Height          =   1545
+      Height          =   1500
       Left            =   16200
-      Picture         =   "Form1.frx":16FD1
+      Picture         =   "Form1.frx":4022A
+      Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
-      Width           =   1125
+      Width           =   1200
    End
    Begin VB.Image Image8 
-      Height          =   1545
+      Height          =   1500
       Left            =   15120
-      Picture         =   "Form1.frx":17638
+      Picture         =   "Form1.frx":417C3
+      Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
-      Width           =   1110
+      Width           =   1200
    End
    Begin VB.Image Image7 
-      Height          =   1545
+      Height          =   1500
       Left            =   14040
-      Picture         =   "Form1.frx":17C64
+      Picture         =   "Form1.frx":42B47
+      Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
-      Width           =   1110
+      Width           =   1200
    End
    Begin VB.Image Image6 
-      Height          =   1545
+      Height          =   1500
       Left            =   12960
-      Picture         =   "Form1.frx":1827A
+      Picture         =   "Form1.frx":43E64
+      Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
-      Width           =   1110
+      Width           =   1200
    End
    Begin VB.Image Image5 
-      Height          =   1515
+      Height          =   1500
       Left            =   11880
-      Picture         =   "Form1.frx":18853
+      Picture         =   "Form1.frx":44F97
+      Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
-      Width           =   1080
+      Width           =   1200
    End
    Begin VB.Image Image4 
-      Height          =   1560
+      Height          =   1500
       Left            =   10800
-      Picture         =   "Form1.frx":18DF8
+      Picture         =   "Form1.frx":46042
+      Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
-      Width           =   1125
+      Width           =   1200
    End
    Begin VB.Image Image3 
-      Height          =   1545
+      Height          =   1500
       Left            =   9720
-      Picture         =   "Form1.frx":193B9
+      Picture         =   "Form1.frx":46FA3
+      Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
-      Width           =   1125
+      Width           =   1200
    End
    Begin VB.Image Image2 
-      Height          =   1545
-      Left            =   8640
-      Picture         =   "Form1.frx":1994F
+      Height          =   1500
+      Left            =   8760
+      Picture         =   "Form1.frx":47D4C
+      Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
-      Width           =   1095
+      Width           =   1200
    End
    Begin VB.Image Image1 
-      Height          =   1545
+      Height          =   1500
       Left            =   7560
-      Picture         =   "Form1.frx":19EAD
+      Picture         =   "Form1.frx":48AB9
+      Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
-      Width           =   1110
+      Width           =   1200
    End
    Begin VB.Menu File 
       Caption         =   "File"
@@ -649,9 +768,21 @@ Dim Deck(52)
 Dim HandCards1, HandCards2, HandCards3, HandCards4, HandCards5, ValueCards1, ValueCards2, NewHand, DealerHand
 Dim CardImage, CardIndex, PlayerOrNPC, HandCard, ValueCard, Build
 Dim GameStarted, GameEnded, PlayerHasAce, DealerHasAce As Boolean
-Dim Cash, CardsLeft As Integer
+Dim Cash, CardsLeft, Bet As Integer
 Public Function NewCard(PlayerOrNPC, CardIndex, HandCard)
+
+If Deck(CardIndex) = False Then
+Deck(CardIndex) = True
+ElseIf Deck(CardIndex) = True Then
+    While Deck(CardIndex) = True:
+        CardIndex = Int(Rnd * 52 + 1)
+        DoEvents
+    Wend
+    Deck(CardIndex) = True
+End If
+
 CardsLeft = CardsLeft - 1
+
 For x = 1 To 52 Step 13
 
 If CardIndex = x Then
@@ -841,7 +972,7 @@ Image64.Visible = True
 End If
 
 NewCard = HandCard & "," & ValueCard & "," & CardsSuit
-
+DoEvents
 Image54.Picture = Image53.Picture
 
 End Function
@@ -864,6 +995,7 @@ Text1.Text = Text1.Text & vbCrLf & "Player has: " & NewHand
         GameStarted = False
         GameEnded = True
         MsgBox "Dealer Wins"
+        If Check2.Value = 0 Then Image56.Picture = Image65.Picture
     End If
 End If
 
@@ -884,31 +1016,22 @@ End If
 End Function
 
 Private Sub Command1_Click()
-If GameEnded = True Then
+If GameEnded = True Or Cash <= 0 Then
 MsgBox "Start a New Game first!"
 Else
 If HandCards3 = Empty Then
     Image59.Visible = True
     HandCards3 = Int(Rnd * 52 + 1)
-    If Deck(HandCards3) = False Then
-    Deck(HandCards3) = True
-    End If
     PlayerCard3 = NewCard("Player", HandCards3, "HandCards3")
     UpdateText (PlayerCard3)
 ElseIf HandCards4 = Empty Then
     Image60.Visible = True
     HandCards4 = Int(Rnd * 52 + 1)
-    If Deck(HandCards4) = False Then
-    Deck(HandCards4) = True
-    End If
     PlayerCard4 = NewCard("Player", HandCards4, "HandCards4")
     UpdateText (PlayerCard4)
 ElseIf HandCards5 = Empty Then
     Image61.Visible = True
     HandCards5 = Int(Rnd * 52 + 1)
-    If Deck(HandCards5) = False Then
-    Deck(HandCards5) = True
-    End If
     PlayerCard5 = NewCard("Player", HandCards5, "HandCards5")
     UpdateText (PlayerCard5)
 Else
@@ -926,64 +1049,43 @@ GameStarted = False
 GameEnded = True
 Text1.Text = Text1.Text & vbCrLf & "Player has BlackJack! Player Wins!"
 MsgBox "Player Wins (+$25 Bonus)"
-Cash = Cash + 225
+Cash = Cash + (Bet * 2) + 25
+Text1.Text = Text1.Text & vbCrLf & "$" & (Bet * 2) + 25 & " won!"
 If Check2.Value = 0 Then Image56.Picture = Image65.Picture
 ElseIf NewHand = 21 Then
 GameStarted = False
 GameEnded = True
 Text1.Text = Text1.Text & vbCrLf & "Player has 21! Player Wins!"
 MsgBox "Player Wins"
-Cash = Cash + 200
+Cash = Cash + (Bet * 2)
+Text1.Text = Text1.Text & vbCrLf & "$" & (Bet * 2) & " won!"
 If Check2.Value = 0 Then Image56.Picture = Image65.Picture
 End If
 
-While DealerHand < 17 And GameStarted = True:
+While DealerHand < 18 And GameStarted = True:
 If DealerHand <= 17 Then
 
 If DealerCards3 = Empty Then
     Image62.Visible = True
     DealerCards3 = Int(Rnd * 52 + 1)
-    If Deck(DealerCards3) = False Then
-    Deck(DealerCards3) = True
-    ElseIf Deck(DealerCards3) = True Then
-        While Deck(DealerCards3) = True:
-            DealerCards3 = Int(Rnd * 52 + 1)
-        Wend
-        Deck(DealerCards3) = True
-    End If
     DealerCard3 = NewCard("Dealer", DealerCards3, "DealerCards3")
     UpdateText (DealerCard3)
 ElseIf DealerCards4 = Empty Then
     Image63.Visible = True
     DealerCards4 = Int(Rnd * 52 + 1)
-    If Deck(DealerCards4) = False Then
-    Deck(DealerCards4) = True
-    ElseIf Deck(DealerCards4) = True Then
-        While Deck(DealerCards4) = True:
-            DealerCards4 = Int(Rnd * 52 + 1)
-        Wend
-        Deck(DealerCards4) = True
-    End If
     DealerCard4 = NewCard("Dealer", DealerCards4, "DealerCards4")
     UpdateText (DealerCard4)
 ElseIf DealerCards5 = Empty Then
     Image64.Visible = True
     DealerCards5 = Int(Rnd * 52 + 1)
-    If Deck(DealerCards5) = False Then
-    Deck(DealerCards5) = True
-    ElseIf Deck(DealerCards5) = True Then
-        While Deck(DealerCards5) = True:
-            DealerCards5 = Int(Rnd * 52 + 1)
-        Wend
-        Deck(DealerCards5) = True
-    End If
     DealerCard5 = NewCard("Dealer", DealerCards5, "DealerCards5")
     UpdateText (DealerCard5)
 Else
 GameStarted = False
 GameEnded = True
 MsgBox "Player Wins"
-Cash = Cash + 200
+Cash = Cash + (Bet * 2)
+Text1.Text = Text1.Text & vbCrLf & "$" & (Bet * 2) & " won!"
 End If
 
 End If
@@ -997,6 +1099,7 @@ Text1.Text = Text1.Text & vbCrLf & "Player has bust! Dealer Wins!"
 GameStarted = False
 GameEnded = True
 MsgBox "Dealer Wins"
+Text1.Text = Text1.Text & vbCrLf & "$" & (Bet) & " lost."
 If Check2.Value = 0 Then Image56.Picture = Image65.Picture
 ElseIf DealerHand >= 22 And GameStarted = True Then
 Text1.Text = Text1.Text & vbCrLf & "Player has: " & NewHand
@@ -1005,7 +1108,8 @@ Text1.Text = Text1.Text & vbCrLf & "Dealer has bust! Player Wins!"
 GameStarted = False
 GameEnded = True
 MsgBox "Player Wins"
-Cash = Cash + 200
+Text1.Text = Text1.Text & vbCrLf & "$" & (Bet * 2) & " won!"
+Cash = Cash + (Bet * 2)
 If Check2.Value = 0 Then Image56.Picture = Image65.Picture
 ElseIf NewHand > DealerHand And DealerHand <= 20 Then
     If GameStarted = True Then
@@ -1015,7 +1119,8 @@ ElseIf NewHand > DealerHand And DealerHand <= 20 Then
         GameStarted = False
         GameEnded = True
         MsgBox "Player Wins"
-        Cash = Cash + 200
+        Text1.Text = Text1.Text & vbCrLf & "$" & (Bet * 2) & " won!"
+        Cash = Cash + (Bet * 2)
         If Check2.Value = 0 Then Image56.Picture = Image65.Picture
     End If
 ElseIf DealerHand > NewHand And NewHand <= 20 Then
@@ -1026,6 +1131,7 @@ ElseIf DealerHand > NewHand And NewHand <= 20 Then
         GameStarted = False
         GameEnded = True
         MsgBox "Dealer Wins"
+        Text1.Text = Text1.Text & vbCrLf & "$" & (Bet) & " lost."
         If Check2.Value = 0 Then Image56.Picture = Image65.Picture
     End If
 End If
@@ -1033,9 +1139,11 @@ End If
 If NewHand = DealerHand And GameStarted = True Then
 Text1.Text = Text1.Text & vbCrLf & "Player has: " & NewHand
 Text1.Text = Text1.Text & vbCrLf & "Dealer has: " & DealerHand
-Text1.Text = Text1.Text & vbCrLf & "Draw"
+Text1.Text = Text1.Text & vbCrLf & "Push"
+MsgBox "Push"
+Text1.Text = Text1.Text & vbCrLf & "$" & (Bet) & " returned."
 If Check2.Value = 0 Then Image56.Picture = Image65.Picture
-Cash = Cash + 100
+Cash = Cash + Bet
 GameStarted = False
 GameEnded = True
 End If
@@ -1054,7 +1162,7 @@ If Check1.Value = 1 Or CardsLeft <= 10 Then
         Next x
 End If
 
-Cash = Cash - 100
+Cash = Cash - Bet
 Label2.Caption = "Cash $" & Cash
 NewHand = 0
 DealerHand = 0
@@ -1085,35 +1193,9 @@ Text1.Text = "VGS-BlackJack v" & Build
 '40-52 C
 
 HandCards1 = Int(Rnd * 52 + 1)
-Deck(HandCards1) = True
 HandCards2 = Int(Rnd * 52 + 1)
-
-If HandCards1 = HandCards2 Then
-HandCards2 = Int(Rnd * 52 + 1)
-Deck(HandCards2) = True
-Else
-Deck(HandCards2) = True
-End If
-
 DealerCards1 = Int(Rnd * 52 + 1)
-If Deck(DealerCards1) = False Then
-Deck(DealerCards1) = True
-ElseIf Deck(DealerCards1) = True Then
-        While Deck(DealerCards1) = True:
-            DealerCards1 = Int(Rnd * 52 + 1)
-        Wend
-        Deck(DealerCards1) = True
-End If
-
 DealerCards2 = Int(Rnd * 52 + 1)
-If Deck(DealerCards2) = False Then
-Deck(DealerCards2) = True
-ElseIf Deck(DealerCards2) = True Then
-        While Deck(DealerCards2) = True:
-            DealerCards2 = Int(Rnd * 52 + 1)
-        Wend
-        Deck(DealerCards2) = True
-End If
 
 PlayerCard1 = NewCard("Player", HandCards1, "HandCards1")
 UpdateText (PlayerCard1)
@@ -1125,17 +1207,26 @@ DealerCard2 = NewCard("Dealer", DealerCards2, "DealerCards2")
 UpdateText (DealerCard2)
 End Sub
 
+Private Sub Command4_Click()
+Bet = Bet + 2
+End Sub
+
+Private Sub Command5_Click()
+Bet = Bet - 1
+End Sub
+
 Private Sub Exit_Click()
 Unload Form1
 End Sub
 
 Private Sub Form_Load()
-Build = "0.4.1"
+Build = "0.4.2"
 Form1.Caption = "VGS-BlackJack v" & Build
 Text1.Text = "VGS-BlackJack v" & Build
 GameStarted = False
 GameEnded = True
 Cash = 1000
+Bet = 100
 CardsLeft = 52
 Label2.Caption = "Cash $" & Cash
 Timer1.Interval = 1000
@@ -1179,6 +1270,7 @@ Private Sub Image58_Click()
 End Sub
 
 Private Sub Timer1_Timer()
+Label4.Caption = "Bet: $" & Bet
 Label3.Caption = "Cards Left: " & CardsLeft
 Label2.Caption = "Cash $" & Cash
 End Sub
