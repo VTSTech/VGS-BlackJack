@@ -1023,6 +1023,10 @@ Text1.Text = Text1.Text & vbCrLf & "Dealer draws " & HandCard(1) & " of " & Hand
 End If
 End Function
 
+Private Sub About_Click()
+MsgBox "VGS-BlackJack v" & Build & vbCrLf & "Written by Veritas (Nigel Todman)" & vbCrLf & "Open Source: https://github.com/Veritas83/VGS-BlackJack"
+End Sub
+
 Private Sub Command1_Click()
 If GameEnded = True Or Cash < 0 Then
 MsgBox "Start a New Game first!"
