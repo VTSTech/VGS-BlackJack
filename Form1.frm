@@ -10,6 +10,14 @@ Begin VB.Form Form1
    ScaleHeight     =   9465
    ScaleWidth      =   6015
    StartUpPosition =   3  'Windows Default
+   Begin VB.HScrollBar HScroll1 
+      Height          =   255
+      Left            =   2280
+      Max             =   5000
+      TabIndex        =   12
+      Top             =   2640
+      Width           =   1455
+   End
    Begin VB.CommandButton Command5 
       Caption         =   "-"
       BeginProperty Font 
@@ -768,7 +776,7 @@ Dim Deck(52)
 Dim HandCards1, HandCards2, HandCards3, HandCards4, HandCards5, ValueCards1, ValueCards2, NewHand, DealerHand
 Dim CardImage, CardIndex, PlayerOrNPC, HandCard, ValueCard, Build
 Dim GameStarted, GameEnded, PlayerHasAce, DealerHasAce As Boolean
-Dim Cash, CardsLeft, Bet As Integer
+Dim Cash, CardsLeft, Bet, SliderVal As Integer
 Public Function NewCard(PlayerOrNPC, CardIndex, HandCard)
 
 If Deck(CardIndex) = False Then
@@ -1016,7 +1024,7 @@ End If
 End Function
 
 Private Sub Command1_Click()
-If GameEnded = True Or Cash <= 0 Then
+If GameEnded = True Or Cash < 0 Then
 MsgBox "Start a New Game first!"
 Else
 If HandCards3 = Empty Then
@@ -1041,7 +1049,7 @@ End If
 End Sub
 
 Private Sub Command2_Click()
-If GameEnded = True Or Cash <= 0 Then
+If GameEnded = True Or Cash < 0 Then
 MsgBox "Start a New Game first!"
 Else
 If NewHand = 21 And HandCards3 = Empty Then
@@ -1086,6 +1094,7 @@ GameEnded = True
 MsgBox "Player Wins"
 Cash = Cash + (Bet * 2)
 Text1.Text = Text1.Text & vbCrLf & "$" & (Bet * 2) & " won!"
+If Check2.Value = 0 Then Image56.Picture = Image65.Picture
 End If
 
 End If
@@ -1154,6 +1163,11 @@ End Sub
 Private Sub Command3_Click()
 Randomize Timer
 
+If Cash <= 0 Then
+Cash = 1000
+MsgBox "$1000 added"
+End If
+
 If Check1.Value = 1 Or CardsLeft <= 10 Then
     If CardsLeft <= 10 Then MsgBox ("Not enough cards! Shuffling deck.")
         CardsLeft = 52
@@ -1162,6 +1176,10 @@ If Check1.Value = 1 Or CardsLeft <= 10 Then
         Next x
 End If
 
+If Bet <= 0 Then
+MsgBox "Bet must be positive value ;)"
+Bet = 1
+End If
 Cash = Cash - Bet
 Label2.Caption = "Cash $" & Cash
 NewHand = 0
@@ -1193,26 +1211,34 @@ Text1.Text = "VGS-BlackJack v" & Build
 '40-52 C
 
 HandCards1 = Int(Rnd * 52 + 1)
-HandCards2 = Int(Rnd * 52 + 1)
-DealerCards1 = Int(Rnd * 52 + 1)
-DealerCards2 = Int(Rnd * 52 + 1)
-
 PlayerCard1 = NewCard("Player", HandCards1, "HandCards1")
 UpdateText (PlayerCard1)
+HandCards2 = Int(Rnd * 52 + 1)
 PlayerCard2 = NewCard("Player", HandCards2, "HandCards2")
 UpdateText (PlayerCard2)
+DealerCards1 = Int(Rnd * 52 + 1)
 DealerCard1 = NewCard("Dealer", DealerCards1, "DealerCards1")
 UpdateText (DealerCard1)
+DealerCards2 = Int(Rnd * 52 + 1)
 DealerCard2 = NewCard("Dealer", DealerCards2, "DealerCards2")
 UpdateText (DealerCard2)
+
 End Sub
 
 Private Sub Command4_Click()
+If GameStarted = True Then
+MsgBox "Cannot change bet when hand is in progress!"
+Else
 Bet = Bet + 2
+End If
 End Sub
 
 Private Sub Command5_Click()
+If GameStarted = True Then
+MsgBox "Cannot change bet when hand is in progress!"
+Else
 Bet = Bet - 1
+End If
 End Sub
 
 Private Sub Exit_Click()
@@ -1220,7 +1246,7 @@ Unload Form1
 End Sub
 
 Private Sub Form_Load()
-Build = "0.4.2"
+Build = "0.4.3"
 Form1.Caption = "VGS-BlackJack v" & Build
 Text1.Text = "VGS-BlackJack v" & Build
 GameStarted = False
@@ -1228,9 +1254,23 @@ GameEnded = True
 Cash = 1000
 Bet = 100
 CardsLeft = 52
+
 Label2.Caption = "Cash $" & Cash
 Timer1.Interval = 1000
 Timer1.Enabled = True
+HScroll1.Value = 2500
+Bet = Bet - 2500
+End Sub
+
+Private Sub HScroll1_Change()
+
+If HScroll1.Value > SliderVal Then
+Bet = Bet + ((HScroll1.Value) - (SliderVal))
+ElseIf HScroll1.Value < SliderVal Then
+Bet = Bet - ((SliderVal) - (HScroll1.Value))
+End If
+SliderVal = HScroll1.Value
+
 End Sub
 
 Private Sub Image13_Click()
