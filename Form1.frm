@@ -802,6 +802,15 @@ Begin VB.Form Form1
          Caption         =   "Exit"
       End
    End
+   Begin VB.Menu Scores 
+      Caption         =   "Scores"
+      Begin VB.Menu View_Scores 
+         Caption         =   "View Scores"
+      End
+      Begin VB.Menu Submit_Score 
+         Caption         =   "Submit Score"
+      End
+   End
    Begin VB.Menu About 
       Caption         =   "About"
    End
@@ -812,6 +821,9 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim Deck(52)
+Dim HighScores, DisplayBoard
+Dim ScoresFile
+Dim ScoresData()
 Dim HandCards1, HandCards2, HandCards3, HandCards4, HandCards5, ValueCards1, ValueCards2, NewHand, DealerHand
 Dim CardImage, CardIndex, PlayerOrNPC, HandCard, ValueCard, Build
 Dim GameStarted, GameEnded, PlayerHasAce, DealerHasAce As Boolean
@@ -831,6 +843,18 @@ Private Const SND_RESOURCE = &H40004     '  name is a resource name or atom
 Private Const SND_SYNC = &H0         '  play synchronously (default)
 Private Declare Function PlaySound Lib "winmm.dll" Alias "PlaySoundA" (ByVal lpszName As String, ByVal hModule As Long, ByVal dwFlags As Long) As Long
 Private Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
+Public Function LoadScores(ScoresFile)
+Set fso = CreateObject("Scripting.FileSystemObject")
+If fso.FileExists(ScoresFile) Then
+ReDim ScoresData(Len(ScoresFile))
+Open ScoresFile For Input As #1
+    Do While Not EOF(1)
+        z = z + 1
+        Line Input #1, ScoresData(z)
+    Loop
+Close #1
+End If
+End Function
 Public Function NewCard(PlayerOrNPC, CardIndex, HandCard)
 Image54.Picture = Image53.Picture
 If Deck(CardIndex) = False Then
@@ -1316,7 +1340,7 @@ Unload Form1
 End Sub
 
 Private Sub Form_Load()
-Build = "0.4.5"
+Build = "0.4.6"
 Form1.Caption = "VGS-BlackJack v" & Build
 Text1.Text = "VGS-BlackJack v" & Build
 GameStarted = False
@@ -1330,6 +1354,11 @@ Timer1.Interval = 1000
 Timer1.Enabled = True
 HScroll1.Value = 2500
 Bet = Bet - 2500
+
+ScoresFile = VB.App.Path & "\scores.dat"
+
+LoadScores (ScoresFile)
+
 End Sub
 
 Private Sub HScroll1_Change()
@@ -1379,8 +1408,37 @@ Private Sub Image58_Click()
 'Player Hand 2
 End Sub
 
+Private Sub Submit_Score_Click()
+PlayerName = InputBox("Player Name?")
+ScoresFile = VB.App.Path & "\scores.dat"
+Set fso = CreateObject("Scripting.FileSystemObject")
+If fso.FileExists(ScoresFile) Then
+Open ScoresFile For Append As #1
+        Print #1, PlayerName & "," & Cash & "," & DateValue(Now) & ","
+Close #1
+End If
+End Sub
+
 Private Sub Timer1_Timer()
 Label4.Caption = "Bet: $" & Bet
 Label3.Caption = "Cards Left: " & CardsLeft
 Label2.Caption = "Cash $" & Cash
+End Sub
+
+Private Sub View_Scores_Click()
+LoadScores (ScoresFile)
+HighScores = ""
+DisplayBoard = ""
+For x = 0 To UBound(ScoresData)
+HighScores = HighScores + ScoresData(x)
+Next x
+x = 0
+ScoreBoard = Split(HighScores, ",")
+For y = 0 To UBound(ScoreBoard) Step 4
+If (y + 2) <= (UBound(ScoreBoard) + 1) Then
+DisplayBoard = DisplayBoard & ScoreBoard(y - x) & "          " & ScoreBoard(y + 1 - x) & "          " & ScoreBoard(y + 2 - x) & vbCrLf
+x = x + 1
+End If
+Next y
+MsgBox "Player          " & "Score          " & "Date          " & vbCrLf & DisplayBoard
 End Sub
