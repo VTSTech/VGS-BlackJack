@@ -5,12 +5,12 @@ Begin VB.Form Form1
    ClientHeight    =   9465
    ClientLeft      =   225
    ClientTop       =   855
-   ClientWidth     =   6015
+   ClientWidth     =   6000
    ForeColor       =   &H00000000&
    LinkTopic       =   "Form1"
    Picture         =   "Form1.frx":0000
    ScaleHeight     =   9465
-   ScaleWidth      =   6015
+   ScaleWidth      =   6000
    StartUpPosition =   3  'Windows Default
    Begin VB.HScrollBar HScroll1 
       Height          =   255
@@ -592,7 +592,7 @@ Begin VB.Form Form1
    Begin VB.Image Image23 
       Height          =   1500
       Left            =   17280
-      Picture         =   "Form1.frx":53C60
+      Picture         =   "Form1.frx":53C69
       Stretch         =   -1  'True
       Top             =   3120
       Visible         =   0   'False
@@ -601,7 +601,7 @@ Begin VB.Form Form1
    Begin VB.Image Image22 
       Height          =   1500
       Left            =   16200
-      Picture         =   "Form1.frx":55612
+      Picture         =   "Form1.frx":5561B
       Stretch         =   -1  'True
       Top             =   3120
       Visible         =   0   'False
@@ -610,7 +610,7 @@ Begin VB.Form Form1
    Begin VB.Image Image21 
       Height          =   1500
       Left            =   15120
-      Picture         =   "Form1.frx":57083
+      Picture         =   "Form1.frx":5708C
       Stretch         =   -1  'True
       Top             =   3120
       Visible         =   0   'False
@@ -619,7 +619,7 @@ Begin VB.Form Form1
    Begin VB.Image Image20 
       Height          =   1500
       Left            =   14040
-      Picture         =   "Form1.frx":587E9
+      Picture         =   "Form1.frx":587F2
       Stretch         =   -1  'True
       Top             =   3120
       Visible         =   0   'False
@@ -628,7 +628,7 @@ Begin VB.Form Form1
    Begin VB.Image Image19 
       Height          =   1500
       Left            =   12960
-      Picture         =   "Form1.frx":59E20
+      Picture         =   "Form1.frx":59E29
       Stretch         =   -1  'True
       Top             =   3120
       Visible         =   0   'False
@@ -637,7 +637,7 @@ Begin VB.Form Form1
    Begin VB.Image Image18 
       Height          =   1500
       Left            =   11880
-      Picture         =   "Form1.frx":5B225
+      Picture         =   "Form1.frx":5B22E
       Stretch         =   -1  'True
       Top             =   3120
       Visible         =   0   'False
@@ -646,7 +646,7 @@ Begin VB.Form Form1
    Begin VB.Image Image17 
       Height          =   1500
       Left            =   10800
-      Picture         =   "Form1.frx":5C565
+      Picture         =   "Form1.frx":5C56E
       Stretch         =   -1  'True
       Top             =   3120
       Visible         =   0   'False
@@ -655,7 +655,7 @@ Begin VB.Form Form1
    Begin VB.Image Image16 
       Height          =   1500
       Left            =   9720
-      Picture         =   "Form1.frx":5D70B
+      Picture         =   "Form1.frx":5D714
       Stretch         =   -1  'True
       Top             =   3120
       Visible         =   0   'False
@@ -664,7 +664,7 @@ Begin VB.Form Form1
    Begin VB.Image Image15 
       Height          =   1500
       Left            =   8640
-      Picture         =   "Form1.frx":5E69C
+      Picture         =   "Form1.frx":5E6A5
       Stretch         =   -1  'True
       Top             =   3120
       Visible         =   0   'False
@@ -673,7 +673,7 @@ Begin VB.Form Form1
    Begin VB.Image Image14 
       Height          =   1500
       Left            =   7560
-      Picture         =   "Form1.frx":5F59E
+      Picture         =   "Form1.frx":5F5A7
       Stretch         =   -1  'True
       Top             =   3120
       Visible         =   0   'False
@@ -682,7 +682,7 @@ Begin VB.Form Form1
    Begin VB.Image Image13 
       Height          =   1500
       Left            =   20520
-      Picture         =   "Form1.frx":602E4
+      Picture         =   "Form1.frx":602ED
       Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
@@ -691,7 +691,7 @@ Begin VB.Form Form1
    Begin VB.Image Image12 
       Height          =   1500
       Left            =   19440
-      Picture         =   "Form1.frx":60F44
+      Picture         =   "Form1.frx":60F4D
       Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
@@ -700,7 +700,7 @@ Begin VB.Form Form1
    Begin VB.Image Image11 
       Height          =   1500
       Left            =   18360
-      Picture         =   "Form1.frx":62A85
+      Picture         =   "Form1.frx":62A8E
       Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
@@ -709,7 +709,7 @@ Begin VB.Form Form1
    Begin VB.Image Image10 
       Height          =   1500
       Left            =   17280
-      Picture         =   "Form1.frx":646DE
+      Picture         =   "Form1.frx":646E7
       Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
@@ -718,7 +718,7 @@ Begin VB.Form Form1
    Begin VB.Image Image9 
       Height          =   1500
       Left            =   16200
-      Picture         =   "Form1.frx":65F5A
+      Picture         =   "Form1.frx":65F63
       Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
@@ -727,7 +727,7 @@ Begin VB.Form Form1
    Begin VB.Image Image8 
       Height          =   1500
       Left            =   15120
-      Picture         =   "Form1.frx":674F3
+      Picture         =   "Form1.frx":674FC
       Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
@@ -736,7 +736,7 @@ Begin VB.Form Form1
    Begin VB.Image Image7 
       Height          =   1500
       Left            =   14040
-      Picture         =   "Form1.frx":68877
+      Picture         =   "Form1.frx":68880
       Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
@@ -745,7 +745,7 @@ Begin VB.Form Form1
    Begin VB.Image Image6 
       Height          =   1500
       Left            =   12960
-      Picture         =   "Form1.frx":69B94
+      Picture         =   "Form1.frx":69B9D
       Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
@@ -754,7 +754,7 @@ Begin VB.Form Form1
    Begin VB.Image Image5 
       Height          =   1500
       Left            =   11880
-      Picture         =   "Form1.frx":6ACC7
+      Picture         =   "Form1.frx":6ACD0
       Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
@@ -763,7 +763,7 @@ Begin VB.Form Form1
    Begin VB.Image Image4 
       Height          =   1500
       Left            =   10800
-      Picture         =   "Form1.frx":6BD72
+      Picture         =   "Form1.frx":6BD7B
       Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
@@ -772,7 +772,7 @@ Begin VB.Form Form1
    Begin VB.Image Image3 
       Height          =   1500
       Left            =   9720
-      Picture         =   "Form1.frx":6CCD3
+      Picture         =   "Form1.frx":6CCDC
       Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
@@ -781,7 +781,7 @@ Begin VB.Form Form1
    Begin VB.Image Image2 
       Height          =   1500
       Left            =   8760
-      Picture         =   "Form1.frx":6DA7C
+      Picture         =   "Form1.frx":6DA85
       Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
@@ -790,7 +790,7 @@ Begin VB.Form Form1
    Begin VB.Image Image1 
       Height          =   1500
       Left            =   7560
-      Picture         =   "Form1.frx":6E7E9
+      Picture         =   "Form1.frx":6E7F2
       Stretch         =   -1  'True
       Top             =   4680
       Visible         =   0   'False
@@ -858,11 +858,10 @@ End Function
 Public Function NewCard(PlayerOrNPC, CardIndex, HandCard)
 Image54.Picture = Image53.Picture
 If Deck(CardIndex) = False Then
-Deck(CardIndex) = True
+    Deck(CardIndex) = True
 ElseIf Deck(CardIndex) = True Then
     While Deck(CardIndex) = True:
         CardIndex = Int(Rnd * 52 + 1)
-        DoEvents
     Wend
     Deck(CardIndex) = True
 End If
@@ -957,7 +956,15 @@ Image54.Picture = Image20.Picture
 ElseIf ValueCard & CardSuit = "91" Then
 Image54.Picture = Image21.Picture
 ElseIf ValueCard & CardSuit = "101" Then
-Image54.Picture = Image22.Picture
+    If CardIndex = 22 Then
+        Image54.Picture = Image22.Picture
+    ElseIf CardIndex = 23 Then
+        Image54.Picture = Image23.Picture
+    ElseIf CardIndex = 24 Then
+        Image54.Picture = Image24.Picture
+    ElseIf CardIndex = 25 Then
+        Image54.Picture = Image25.Picture
+    End If
 ElseIf ValueCard & CardSuit = "112" Then
 Image54.Picture = Image13.Picture
 ElseIf ValueCard & CardSuit = "22" Then
@@ -977,7 +984,15 @@ Image54.Picture = Image7.Picture
 ElseIf ValueCard & CardSuit = "92" Then
 Image54.Picture = Image8.Picture
 ElseIf ValueCard & CardSuit = "102" Then
-Image54.Picture = Image9.Picture
+    If CardIndex = 9 Then
+        Image54.Picture = Image9.Picture
+    ElseIf CardIndex = 10 Then
+        Image54.Picture = Image10.Picture
+    ElseIf CardIndex = 11 Then
+        Image54.Picture = Image11.Picture
+    ElseIf CardIndex = 12 Then
+        Image54.Picture = Image12.Picture
+    End If
 ElseIf ValueCard & CardSuit = "113" Then
 Image54.Picture = Image39.Picture
 ElseIf ValueCard & CardSuit = "23" Then
@@ -997,7 +1012,15 @@ Image54.Picture = Image33.Picture
 ElseIf ValueCard & CardSuit = "93" Then
 Image54.Picture = Image34.Picture
 ElseIf ValueCard & CardSuit = "103" Then
-Image54.Picture = Image35.Picture
+    If CardIndex = 35 Then
+        Image54.Picture = Image35.Picture
+    ElseIf CardIndex = 36 Then
+        Image54.Picture = Image36.Picture
+    ElseIf CardIndex = 37 Then
+        Image54.Picture = Image37.Picture
+    ElseIf CardIndex = 38 Then
+        Image54.Picture = Image38.Picture
+    End If
 ElseIf ValueCard & CardSuit = "114" Then
 Image54.Picture = Image52.Picture
 ElseIf ValueCard & CardSuit = "24" Then
@@ -1017,7 +1040,15 @@ Image54.Picture = Image46.Picture
 ElseIf ValueCard & CardSuit = "94" Then
 Image54.Picture = Image47.Picture
 ElseIf ValueCard & CardSuit = "104" Then
-Image54.Picture = Image48.Picture
+    If CardIndex = 48 Then
+        Image54.Picture = Image48.Picture
+    ElseIf CardIndex = 49 Then
+        Image54.Picture = Image49.Picture
+    ElseIf CardIndex = 50 Then
+        Image54.Picture = Image50.Picture
+    ElseIf CardIndex = 51 Then
+        Image54.Picture = Image51.Picture
+    End If
 ElseIf ValueCard & CardSuit = "14" Then
 Image54.Picture = Image52.Picture
 ElseIf ValueCard & CardSuit = "13" Then
@@ -1057,7 +1088,7 @@ Image64.Picture = Image54.Picture
 Image64.Visible = True
 End If
 
-NewCard = HandCard & "," & ValueCard & "," & CardsSuit
+NewCard = HandCard & "," & ValueCard & "," & CardsSuit & "," & CardIndex
 DoEvents
 
 PlaySound VB.App.Path & "\sounds\page_turn_4.wav", ByVal 0&, SND_FILENAME Or SND_ASYNC
@@ -1067,9 +1098,43 @@ Sleep (200)
 End Function
 Public Function UpdateText(HandCard)
 HandCard = Split(HandCard, ",")
-
+'MsgBox "Which Card: " & HandCard(0) & " Card Value: " & HandCard(1) & " Card Suit: " & HandCard(2) & " Card Index: " & HandCard(3)
 If HandCard(0) = "HandCards1" Or HandCard(0) = "HandCards2" Or HandCard(0) = "HandCards3" Or HandCard(0) = "HandCards4" Or HandCard(0) = "HandCards5" Then
-Text1.Text = Text1.Text & vbCrLf & "Player draws " & HandCard(1) & " of " & HandCard(2)
+    If HandCard(3) = 10 Then
+    Text1.Text = Text1.Text & vbCrLf & "Player draws Jack of " & HandCard(2)
+    ElseIf HandCard(3) = 11 Then
+    Text1.Text = Text1.Text & vbCrLf & "Player draws Queen of " & HandCard(2)
+    ElseIf HandCard(3) = 12 Then
+    Text1.Text = Text1.Text & vbCrLf & "Player draws King of " & HandCard(2)
+    ElseIf HandCard(3) = 13 Then
+    Text1.Text = Text1.Text & vbCrLf & "Player draws Ace of " & HandCard(2)
+    ElseIf HandCard(3) = 23 Then
+    Text1.Text = Text1.Text & vbCrLf & "Player draws Jack of " & HandCard(2)
+    ElseIf HandCard(3) = 24 Then
+    Text1.Text = Text1.Text & vbCrLf & "Player draws Queen of " & HandCard(2)
+    ElseIf HandCard(3) = 25 Then
+    Text1.Text = Text1.Text & vbCrLf & "Player draws King of " & HandCard(2)
+    ElseIf HandCard(3) = 26 Then
+    Text1.Text = Text1.Text & vbCrLf & "Player draws Ace of " & HandCard(2)
+    ElseIf HandCard(3) = 36 Then
+    Text1.Text = Text1.Text & vbCrLf & "Player draws Jack of " & HandCard(2)
+    ElseIf HandCard(3) = 37 Then
+    Text1.Text = Text1.Text & vbCrLf & "Player draws Queen of " & HandCard(2)
+    ElseIf HandCard(3) = 38 Then
+    Text1.Text = Text1.Text & vbCrLf & "Player draws King of " & HandCard(2)
+    ElseIf HandCard(3) = 39 Then
+    Text1.Text = Text1.Text & vbCrLf & "Player draws Ace of " & HandCard(2)
+    ElseIf HandCard(3) = 49 Then
+    Text1.Text = Text1.Text & vbCrLf & "Player draws Jack of " & HandCard(2)
+    ElseIf HandCard(3) = 50 Then
+    Text1.Text = Text1.Text & vbCrLf & "Player draws Queen of " & HandCard(2)
+    ElseIf HandCard(3) = 51 Then
+    Text1.Text = Text1.Text & vbCrLf & "Player draws King of " & HandCard(2)
+    ElseIf HandCard(3) = 52 Then
+    Text1.Text = Text1.Text & vbCrLf & "Player draws Ace of " & HandCard(2)
+    Else
+    Text1.Text = Text1.Text & vbCrLf & "Player draws " & HandCard(1) & " of " & HandCard(2)
+    End If
 
 If (NewHand + HandCard(1) >= 22) And PlayerHasAce = True Then
 NewHand = NewHand + HandCard(1) - 10
@@ -1100,7 +1165,41 @@ End If
 End If
 
 If HandCard(0) = "DealerCards2" Or HandCard(0) = "DealerCards3" Or HandCard(0) = "DealerCards4" Or HandCard(0) = "DealerCards5" Then
-Text1.Text = Text1.Text & vbCrLf & "Dealer draws " & HandCard(1) & " of " & HandCard(2)
+    If HandCard(3) = 10 Then
+    Text1.Text = Text1.Text & vbCrLf & "Dealer draws Jack of " & HandCard(2)
+    ElseIf HandCard(3) = 11 Then
+    Text1.Text = Text1.Text & vbCrLf & "Dealer draws Queen of " & HandCard(2)
+    ElseIf HandCard(3) = 12 Then
+    Text1.Text = Text1.Text & vbCrLf & "Dealer draws King of " & HandCard(2)
+    ElseIf HandCard(3) = 13 Then
+    Text1.Text = Text1.Text & vbCrLf & "Dealer draws Ace of " & HandCard(2)
+    ElseIf HandCard(3) = 23 Then
+    Text1.Text = Text1.Text & vbCrLf & "Dealer draws Jack of " & HandCard(2)
+    ElseIf HandCard(3) = 24 Then
+    Text1.Text = Text1.Text & vbCrLf & "Dealer draws Queen of " & HandCard(2)
+    ElseIf HandCard(3) = 25 Then
+    Text1.Text = Text1.Text & vbCrLf & "Dealer draws King of " & HandCard(2)
+    ElseIf HandCard(3) = 26 Then
+    Text1.Text = Text1.Text & vbCrLf & "Dealer draws Ace of " & HandCard(2)
+    ElseIf HandCard(3) = 36 Then
+    Text1.Text = Text1.Text & vbCrLf & "Dealer draws Jack of " & HandCard(2)
+    ElseIf HandCard(3) = 37 Then
+    Text1.Text = Text1.Text & vbCrLf & "Dealer draws Queen of " & HandCard(2)
+    ElseIf HandCard(3) = 38 Then
+    Text1.Text = Text1.Text & vbCrLf & "Dealer draws King of " & HandCard(2)
+    ElseIf HandCard(3) = 39 Then
+    Text1.Text = Text1.Text & vbCrLf & "Dealer draws Ace of " & HandCard(2)
+    ElseIf HandCard(3) = 49 Then
+    Text1.Text = Text1.Text & vbCrLf & "Dealer draws Jack of " & HandCard(2)
+    ElseIf HandCard(3) = 50 Then
+    Text1.Text = Text1.Text & vbCrLf & "Dealer draws Queen of " & HandCard(2)
+    ElseIf HandCard(3) = 51 Then
+    Text1.Text = Text1.Text & vbCrLf & "Dealer draws King of " & HandCard(2)
+    ElseIf HandCard(3) = 52 Then
+    Text1.Text = Text1.Text & vbCrLf & "Dealer draws Ace of " & HandCard(2)
+    Else
+    Text1.Text = Text1.Text & vbCrLf & "Dealer draws " & HandCard(1) & " of " & HandCard(2)
+    End If
 End If
 End Function
 
@@ -1271,9 +1370,14 @@ If Check1.Value = 1 Or CardsLeft <= 10 Then
 End If
 
 If Bet <= 0 Then
-MsgBox "Bet must be positive value ;)"
+MsgBox "Bet must be positive value ;)  Bet raised to 1"
 Bet = 1
 End If
+If Bet > Cash Then
+MsgBox "Bet cannot be more than you have on hand. Bet lowered to 1"
+Bet = 1
+End If
+
 Cash = Cash - Bet
 Label2.Caption = "Cash $" & Cash
 NewHand = 0
@@ -1340,7 +1444,7 @@ Unload Form1
 End Sub
 
 Private Sub Form_Load()
-Build = "0.4.6"
+Build = "0.4.7"
 Form1.Caption = "VGS-BlackJack v" & Build
 Text1.Text = "VGS-BlackJack v" & Build
 GameStarted = False
@@ -1442,3 +1546,4 @@ End If
 Next y
 MsgBox "Player          " & "Score          " & "Date          " & vbCrLf & DisplayBoard
 End Sub
+
